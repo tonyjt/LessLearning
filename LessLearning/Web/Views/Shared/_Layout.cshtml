@@ -1,0 +1,154 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--  SEO STUFF START HERE -->
+    <title>恒雁差旅系统</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="follow, index" />
+    <!--  SEO STUFF END -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/bizstrap")
+    @Styles.Render("~/Content/less")
+    @Scripts.Render("~/bundles/jquery")
+    <!--  revolution slider plugin : begin -->
+    @*<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css" />
+    *@
+</head>
+<body>
+    <!-- THE LINE AT THE VERY TOP OF THE PAGE -->
+    <div class="top_line"></div>
+    <!-- HEADER AREA -->
+    <header>
+        <div class="container divContainerCustom">
+            <div class="row">
+                <!-- HEADER: LOGO AREA -->
+                <div class="span4 logo">
+                    <a class="logo" href="index.html">
+                        <img alt="logo" title="bizstrap" src="/img/bizstrap/logo.png">
+                    </a>
+                </div>
+                <div class="span4 offset4">
+                    <!-- HEADER: PHONE NUMBER -->
+                    <p class="head_phone"><a href="tel:555-555-5555">(800) 655-7800</a></p>
+                </div>
+                <!-- HEADER: SOCIAL ICONS -->
+                <ul class="socials unstyled">
+                    <li><a class="flickr" href="#"></a></li>
+                    <li><a class="twitter" href="#"></a></li>
+                    <li><a class="facebook" href="#"></a></li>
+                    <li><a class="youtube" href="#"></a></li>
+                    <li><a class="dribbble" href="#"></a></li>
+                    <li><a class="pinterest" href="#"></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- HEADER: PRIMARY SITE NAVIGATION -->
+        <div class="container divContainerCustom">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <div class="buttons-container">
+                        </div>
+                        <div class="nav-collapse">
+                            <ul class="nav nav-pills" id="navul">
+                                <li class="active single">
+                                    <a href="@Url.Action("index","flight")">首页
+                                    <i>差旅站点首页</i>
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">预定
+                                        <i>预定您的行程</i>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a href="@Url.Action("index","flight")">国内机票</a></li>
+                                        <li><a href="dividers.html">酒店预订</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu2">行程管理<i>行程的查询与变更</i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="3_columns_about.html">行程查询</a></li>
+                                        <li><a href="left_column_about.html">行程变更</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu3">审批管理<i>审批单查询与管理</i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="portfolio.html">审批单查询</a></li>
+                                        <li><a href="portfolio_grid.html">待审批列表</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#menu4">数据服务<i>数据的查询与导出</i>
+                                    </a>
+
+                                    <ul class="dropdown-menu">
+                                        <li><a href="blog_3_columns.html">员工出行报告</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="contact_us.html">系统管理
+                                            <i>管理您的系统</i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="">协议酒店维护</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="contact_us.html">辅助工具
+                                            <i>帮助您的出行</i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="">电子地图</a></li>
+                                        <li><a href="">汇率转换</a></li>
+                                        <li><a href="">天气预报</a></li>
+                                        <li><a href="">时区查询</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-content content">
+        <div class="container divContainerCustom" style="min-height: 100%">
+            <br />
+            @RenderSection("featured", required: false)
+            @RenderBody()
+        </div>
+    </div>
+    <!-- FOOTER STARTS HERE -->
+    <footer id="footer" class="footer">
+        <div class="container divContainerCustom">
+            <!-- Footer
+      ================================================== -->
+
+            <p class="pull-right"><a href="#">↑回顶部</a></p>
+            <p>&copy; 2012 上海恒雁信息科技有限公司 版权所有</p>
+            <p>联系电话: 021-51036333</p>
+            <p>沪ICP备10214589号-1</p>
+
+            <script>
+            </script>
+
+        </div>  
+
+    </footer>
+    <!-- END FOOTER -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/less")
+    @Scripts.Render("~/bundles/bizstrap")
+
+</body>
+</html>

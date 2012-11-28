@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "Master";
+    Layout = "~/Views/Shared/_ContentLayout.cshtml";
+}
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/flight/master.js")"></script>
+
+<div class="container-fluid containerDiv">
+    <div class="row-fulid">
+        <div class="span3">
+            <h2>
+                <img src="~/img/flight.gif" />
+                国内机票预订
+            </h2>
+        </div>
+        <div class="offset6 span3">
+            <ul class="nav nav-pills">
+                <li>
+                    <span class="label" id="flightNav1">选择</span>&nbsp;
+                </li>
+                <li>
+                    <span class="label" id="flightNav2">预订</span>&nbsp;
+                </li>
+                <li>
+                    <span class="label" id="flightNav3">确认</span>&nbsp;
+                </li>
+                <li>
+                    <span class="label" id="flightNav4">完成</span>&nbsp;
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="span12 noMarginPadding" style="min-height:15px !important;">
+        <hr />
+    </div>
+    
+    <div class="span12 noMarginPadding">
+        @RenderBody()
+    </div>
+</div>

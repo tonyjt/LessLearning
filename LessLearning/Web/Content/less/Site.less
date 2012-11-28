@@ -1,0 +1,157 @@
+﻿/*整个网站
+    ----------------------------------------------------------*/
+
+@containerPaddingLeft:0px;
+@containerPaddingRight:0px;
+@color:#2773AE;
+
+@colorGray:#DDD;
+@smallInputWidth:170px;
+@miniInputWidth:120px;
+
+@paddingTop:10px;
+@paddingBottom:10px;
+@paddingSmall:5px;
+
+@marginSmall:5px;
+font{
+	font-family:Arial, sans-serif;
+}
+hr{
+	padding:0px 0px 0px 0px!important;
+	margin:0px 0px 0px 0px !important;
+}
+
+//div
+.containerDiv{
+	padding-left: @containerPaddingLeft !important;
+	padding-right:@containerPaddingRight !important;
+}
+.bs-docs (@content:"Example"){
+    position: relative;
+    margin: 0 0;
+    padding: 39px 19px 14px;
+    background-color: @colorGray;
+    border: 1px solid @colorGray;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+
+	&:after{
+		content: @content;
+		position: absolute;
+		top: -1px;
+		left: -1px;
+		padding: 3px 7px;
+		font-size: 12px;
+		font-weight: bold;
+		font-style:white;
+		background-color: white;
+		border: 1px solid @colorGray;	
+		color: @color;
+		-webkit-border-radius: 4px 0 4px 0;
+		-moz-border-radius: 4px 0 4px 0;
+		border-radius: 4px 0 4px 0;		
+	}
+}
+
+.divCommon{
+	position: relative;
+    margin: 0 0;
+	padding-top:@paddingTop;
+	padding-bottom:@paddingBottom;
+    background-color: @colorGray;
+    border: 1px solid @colorGray;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.divContainerCustom{
+	width:1000px;
+}
+.noMarginPadding{
+	padding:0px 0px 0px 0px !important;
+	margin:0px 0px 0px 0px !important;
+}
+
+.noMargin{
+	margin:0px 0px 0px 0px !important;
+}
+.padding-left-small{
+	padding-left: @paddingSmall;
+}
+.padding-right-small{
+	padding-right: @paddingSmall;
+}
+
+.margin-right-small{
+	margin-right:@marginSmall;	
+}
+
+.margin-top-small{
+	margin-top:@marginSmall;	
+}
+
+.text-small{
+	width:@smallInputWidth - 14 !important;
+}
+
+.text-mini{
+	width:@miniInputWidth - 14 !important;
+}
+
+.width-min{
+	width:@miniInputWidth;
+}
+
+.control-group-small{
+	.control-label{
+		text-align:left !important;
+		width:70px !important;
+	}
+	.controls{
+		margin-left:70px !important;
+	}
+	input[type="text"]{
+		width:@smallInputWidth - 14 !important;
+	}
+	select{
+		width:@smallInputWidth;
+	}
+}
+
+/*导航栏
+    ----------------------------------------------------------*/
+#navul{
+  li{
+	width:130px;
+   }
+}
+
+/*ContentLayout页面
+    ----------------------------------------------------------*/
+.content{
+	min-height:380px;
+	height:auto
+}
+
+.bs-docs-info
+{
+	.bs-docs("个人信息");
+}
+
+.bs-docs-noti
+{
+	.bs-docs("提示信息");
+}
+
+/*Flight页面
+    ----------------------------------------------------------*/
+.flight-search-tr
+{
+	td{
+		padding-top: @paddingSmall;
+	}
+}
+

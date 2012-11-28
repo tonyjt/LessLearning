@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "_ContentLayout";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid containerDiv">
+    <div class="row-fluid">
+        <div class="span3">
+            <!--Sidebar content-->
+            <div class="bs-docs-info">
+                  <div class="side-nav sidebar-block">
+                      <ul>
+                          <li>
+                              用户：tonyjt
+                          </li>
+                          <li>
+                              单位：恒雁科技有限公司
+                          </li>
+                      </ul>
+
+                  </div>
+                  <div class="row-fluid">
+                      <div class="span4">
+                          <a href="">个人设置</a>
+                      </div>
+                      <div class="span4">
+                          <a href="">差旅政策</a>
+                      </div>
+                      <div class="span4">
+                          <a href="">修改密码</a>
+                      </div>
+                  </div>
+                  <button type="button" class="btn btn-mini btn-primary">安全退出</button>
+            </div>
+            <br />
+            <div class="bs-docs-noti">
+                <div style="min-height:60px;">
+                    暂无
+                </div>
+            </div>
+        </div>
+        <div class="span9">
+            <!--Body content-->
+            @RenderBody()
+        </div>
+    </div>
+</div>

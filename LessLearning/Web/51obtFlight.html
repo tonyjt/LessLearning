@@ -1,0 +1,604 @@
+﻿
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gbk" />
+<title>国内机票预订</title>
+<link type="text/css" rel="stylesheet" href="../../js/tabCity/css/tabCity.css" />
+<link type="text/css" rel="stylesheet" href="../../js/tabCity/css/tabCitySuggest.css" />
+<link type="text/css" rel="stylesheet" href="../../css/basic.css" />
+<script type="text/javascript" language="javascript" src="../../js/jquery/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" language="javascript" src="../../js/jquery/j.dimensions.js"></script>
+<script type="text/javascript" language="javascript" src="../../js/tabCity/js/tabCityMain.js"></script>
+<script type="text/javascript" language="javascript" src="../../js/tabCity/js/tabCityList.js"></script>
+<script type="text/javascript" language="javascript" src="../../js/tabCity/js/tabCitySuggest.js"></script>
+<script type="text/javascript" language="javascript" src="../../js/Calendar/WdatePicker.js"></script>
+<script type="text/javascript" language="javascript">
+    function closeMask() {
+        parent.ymPrompt.close(); /* 遮罩关闭 */
+    }
+
+    function query() {
+        var SearchType;
+        var SingleWay = document.getElementById("SingleWay").checked;
+        var RoundWay = document.getElementById("RoundWay").checked;
+        var TMPFORM = document.getElementById("TMPFORM").value;
+        var TMPARRIVE = document.getElementById("TMPARRIVE").value;
+        var DATE = document.getElementById("DATE").value; // 单程
+        var STARTDATE = document.getElementById("STARTDATE").value; // 往返
+        var ENDDATE = document.getElementById("ENDDATE").value; // 往返
+        var ariPort = document.getElementById("QB_AIRLINE").value; // 航空公司
+        var canBin = document.getElementById("QB_CABIN").value; // 仓位
+        var dateFrom = document.getElementById("QB_DEPTIME").value; // 出发时间
+        var dateFromTime = document.getElementById("QB_DEPTIME_ROUND").value; // 出发时间
+        var dateArriveTime = document.getElementById("QB_ORGTIME_ROUND").value; // 抵达时间
+        if (SingleWay) {
+            if (checkfrm('S')) {
+                document.getElementById("frm").action = "searchSingleWayFlight.action?ORGCITY=" + TMPFORM + "&DSTCITY=" + TMPARRIVE + "&DEPDATE=" + DATE + "&ariPort=" + ariPort + "&canBin=" + canBin + "&dateFrom=" + dateFrom;
+                parent.ymPrompt.load({ message: '正在为您查询航班数据，请稍候···', width: 320, height: 150 })
+                document.getElementById("frm").target = "Bodyiframe";
+                document.getElementById("frm").submit();
+            }
+        } else {
+            if (checkfrm('W')) {
+                document.getElementById("frm").action =
+                    "searchRoundWayFlight.action?ORGCITY=" + TMPFORM   // 起飞城市
+                                    + "&DSTCITY=" + TMPARRIVE          // 抵达城市
+                                    + "&DEPDATE=" + STARTDATE          // 起飞日期
+                                    + "&DEPDATE_R=" + ENDDATE          // 返程日期
+                                    + "&ariPort=" + ariPort            // 航空公司()
+                                    + "&canBin=" + canBin              // 舱位()
+                                    + "&dateFrom=" + dateFromTime      // 起飞时间
+                                    + "&dateReturn=" + dateArriveTime; // 返回时间
+                parent.ymPrompt.load({ message: '正在为您查询航班数据，请稍候···', width: 320, height: 150 })
+                document.getElementById("frm").target = "Bodyiframe";
+                document.getElementById("frm").submit();
+            }
+        }
+    }
+
+    function displayControl(SearchType) {
+        switch (SearchType) {
+            case "S":
+                document.getElementById('SW').style.display = 'block';
+                document.getElementById('SW1').style.display = 'block';
+                document.getElementById('RW').style.display = 'none';
+                document.getElementById('RW1').style.display = 'none';
+                break;
+            case "D":
+                document.getElementById('SW').style.display = 'none';
+                document.getElementById('SW1').style.display = 'none';
+                document.getElementById('RW').style.display = 'block';
+                document.getElementById('RW1').style.display = 'block';
+                break;
+        }
+    }
+
+    function checkfrm(str) {
+        if (str == 'S') {
+            if (document.getElementById("TMPFORM").value.length == 0 || document.getElementById("TMPFORM").value == '中文/英文/三字码') {
+                parent.ymPrompt.alert({ message: '请选择出发城市' })
+                return false;
+            }
+            if (document.getElementById("TMPARRIVE").value.length == 0 || document.getElementById("TMPARRIVE").value == '中文/英文/三字码') {
+                parent.ymPrompt.alert({ message: '请选择到达城市' })
+                return false;
+            }
+            if (document.getElementById("DATE").value.length == 0) {
+                parent.ymPrompt.alert({ message: '请选择出发日期' })
+                return false;
+            }
+        } else if (str == 'W') {
+            if (document.getElementById("TMPFORM").value.length == 0 || document.getElementById("TMPFORM").value == '中文/英文/三字码') {
+                parent.ymPrompt.alert({ message: '请选择出发城市' })
+                return false;
+            }
+            if (document.getElementById("TMPARRIVE").value.length == 0 || document.getElementById("TMPARRIVE").value == '中文/英文/三字码') {
+                parent.ymPrompt.alert({ message: '请选择到达城市' })
+                return false;
+            }
+            if (document.getElementById("STARTDATE").value.length == 0) {
+                parent.ymPrompt.alert({ message: '请选择出发日期' })
+                return false;
+            }
+            if (document.getElementById("ENDDATE").value.length == 0) {
+                parent.ymPrompt.alert({ message: '请选择返回日期' })
+                return false;
+            }
+        } else {
+            parent.alert("[Massage]:check error!");
+            return false;
+        }
+        return true;
+    }
+
+    /* checkbox全选 */
+    function checkAll() {
+        var item = document.getElementsByName("checkedItem");
+        for (var i = 0; i < item.length; i++) {
+            if (true == document.getElementById("checked").checked) {
+                item[i].checked = true;
+            } else {
+                item[i].checked = false;
+            }
+        }
+    }
+
+    /* 取消最顶端的checkbox的checked属性 */
+    function checkFalse() {
+        var item = document.getElementsByName("checkedItem");
+        for (var i = 0; i < item.length; i++) {
+            if (item[i].checked == false) {
+                document.getElementById("checked").checked = false;
+            }
+        }
+    }
+
+    function queryTravellerInfo() {
+        var travelType = document.getElementById("chooseTravelFlag").value;
+        /* 点击查询清空差旅人列表 */
+        //if(document.getElementsByName("tableRows") != null) {
+        //	var tableRows = document.getElementsByName("tableRows");
+        //	var tempLength = tableRows.length;
+        //	for(var i = 0; i < tempLength; i++) {
+        //		deliveryDeleteSignRow("certItem" + i);
+        //	}
+        //}
+        var FUI_NAME_CN = document.getElementById("userInfoEntity.FUI_NAME_CN").value;
+        var FUI_NAME_EN = document.getElementById("userInfoEntity.FUI_NAME_EN").value;
+        var FUI_MOBILE = document.getElementById("userInfoEntity.FUI_MOBILE").value;
+        var FUI_EMAIL = document.getElementById("userInfoEntity.FUI_EMAIL").value;
+        document.getElementById("frm").target = "iframeResult";
+        if (travelType == "1") { //差旅人
+            document.getElementById("frm").action = "queryTravellerInfo.action?FUI_NAME_CN=" + FUI_NAME_CN + "&FUI_NAME_EN=" + FUI_NAME_EN + "&FUI_MOBILE=" + FUI_MOBILE + "&FUI_EMAIL=" + FUI_EMAIL;
+        }
+        if (travelType == "2") { //临时差旅人
+            document.getElementById("frm").action = "../travelitinerary/queryTempTravelInfo.action?FUI_NAME_CN=" + FUI_NAME_CN + "&FUI_NAME_EN=" + FUI_NAME_EN + "&FUI_MOBILE=" + FUI_MOBILE + "&FUI_EMAIL=" + FUI_EMAIL;
+        }
+        document.getElementById("frm").submit();
+        //document.getElementById("certTRLastIndex").value = "0";
+    }
+
+    /* 已有差旅人JS， begin */
+    function changgeTriverRes(checks) {
+        var tempArr = new Array();
+        tempArr = checks.split("-");
+        certRow(tempArr[0], tempArr[1], tempArr[2], tempArr[3], tempArr[4]);
+    }
+
+    function findObj(theObj, theDoc) {
+        var p, i, foundObj;
+        if (!theDoc)
+            theDoc = document;
+        if ((p = theObj.indexOf("?")) > 0 && parent.frames.length) {
+            theDoc = parent.frames[theObj.substring(p + 1)].document;
+            theObj = theObj.substring(0, p);
+        }
+        if (!(foundObj = theDoc[theObj]) && theDoc.all)
+            foundObj = theDoc.all[theObj];
+        for (i = 0; !foundObj && i < theDoc.forms.length; i++)
+            foundObj = theDoc.forms[i][theObj];
+        for (i = 0; !foundObj && theDoc.layers && i < theDoc.layers.length; i++)
+            foundObj = findObj(theObj, theDoc.layers[i].document);
+        if (!foundObj && document.getElementById)
+            foundObj = document.getElementById(theObj);
+        return foundObj;
+    }
+
+    function certRow(args1, args2, args3, args4, args5) {
+        document.getElementById("triveralDiv").style.display = "block";
+        var txtTRLastIndex = findObj("certTRLastIndex", document);
+        var rowID = parseInt(txtTRLastIndex.value);
+        var MyTable = findObj("certTable", document);
+        var newTr = MyTable.insertRow(MyTable.rows.length);
+        newTr.id = "certItem" + args1;
+        //添加5列
+        var newTd0 = newTr.insertCell(0);
+        var newTd1 = newTr.insertCell(1);
+        var newTd2 = newTr.insertCell(2);
+        var newTd3 = newTr.insertCell(3);
+        var newTd4 = newTr.insertCell(4);
+        var newTd5 = newTr.insertCell(5);
+
+        newTd0.innerHTML = '&nbsp;&nbsp;';
+        newTd1.innerHTML = '<div class="fl text-align_l height20" title="' + args2 + '" style="overflow:hidden;white-space:nowrap;text-overflow:ellipsis;width:120px;cursor: pointer;">' + args2 + '</div>' + '<input type="hidden" id="checkedItem" name="checkedItem" value="' + args1 + '" />';
+        newTd2.innerHTML = '<div class="fl width80 text-align_l height20">' + args3 + '</div>';
+        newTd3.innerHTML = '<div class="fl width80 text-align_l height20">' + args4 + '</div>';
+        newTd4.innerHTML = '<div class="fl width80 text-align_l height20">' + args5 + '</div>';
+        newTd5.innerHTML = '<div class="fl width80 text-align_l height20"><input type="hidden" id="tableRows" name="tableRows" value="certItem' + rowID + '" /><input type="hidden" id="tableRows_' + args1 + '" value="certItem' + rowID + '" /><input class="btn_list_del" type="button" onclick="deliveryDeleteSignRow(\'certItem' + rowID + '\',' + args1 + '\);"/></div>';
+        txtTRLastIndex.value = (rowID + 1).toString();
+        parent.reSetIframe();
+        // document.getElementById("search").focus();
+    }
+
+    function deliveryDeleteSignRow(rowid, userid) {
+        var MyTable = findObj("certTable", document);
+        var signItem = findObj("certItem" + userid, document);
+        var txtTRLastIndex = findObj("certTRLastIndex", document);
+        var rowIDZ = parseInt(txtTRLastIndex.value);
+
+        //获取将要删除的行的Index
+        var rowIndex = signItem.rowIndex;
+
+        //删除指定Index的行
+        if (typeof (rowIndex) == "undefined") {
+            rowIndex = rowIDZ + 1;
+        }
+        MyTable.deleteRow(rowIndex);
+        parent.reSetIframe();
+        txtTRLastIndex.value = (rowIDZ - 1).toString();
+        //document.getElementById("search").focus();
+
+        /* 隐藏已有的差旅人列表DIV */
+        if (txtTRLastIndex.value == "0") {
+            document.getElementById("triveralDiv").style.display = "none";
+        }
+
+        /* 取消子页面上对应的差旅人checkbox的勾 */
+        if (window.frames['iframeResult'].document.getElementById("checkedItem_" + userid) != null) {
+            window.frames['iframeResult'].document.getElementById("checkedItem_" + userid).checked = false;
+            window.frames['iframeResult'].checkFalse(); //去除顶部checkbox
+        }
+    }
+    /* 已有差旅人JS， end */
+    function checkText() {
+        /* 阻止输入单引号 */
+        if (window.event.keyCode == 39) {
+            event.returnValue = false;
+        }
+    }
+
+    function show(chooseTravelFlag) {
+        document.getElementById('choose_alert').style.display = "none";
+        document.getElementById('choose').style.display = "block";
+        document.getElementById("chooseTravelFlag").value = chooseTravelFlag;
+    }
+
+    function queryNotApprove(showTabFlag) {
+        document.getElementById("frm").action = "../approve/queryNotApprove.action?showTabFlag=" + showTabFlag;
+        document.getElementById("frm").submit();
+    }
+
+    /* tabCity城市控件 */
+    $(function () {
+        $("#city1").suggest(citys, {
+            hot_list: commoncitys,
+            dataContainer: '#TMPFORM',
+            attachObject: '#suggest1'
+        });
+        $("#city2").suggest(citys, {
+            hot_list: commoncitys,
+            dataContainer: '#TMPARRIVE',
+            attachObject: "#suggest2"
+        });
+    });
+</script>
+</head>
+<body id="mainbody" onload="closeMask();">
+<!-- 此ID请勿改动 by david.lu-->
+<form action="" id="frm" method="post" name="frm">
+  <input type="hidden" id="TMPFORM" />
+  <input type="hidden" id="TMPARRIVE" />
+  <input type="hidden" id="chooseTravelFlag" name="chooseTravelFlag" />
+    <table width="100%;">
+      <tr>
+        <td width="160px"><h2 class="flt_headline">国内机票预订</h2></td>
+        <td width="50px">
+        	        </td>
+        <td align="right">
+          <ul class="base_step1">
+            <li class="base_meter1"><span></span><p>选择</p></li>
+            <li class="base_meter2"><span></span><p>预订</p></li>
+            <li class="base_meter3"><span></span><p>确认</p></li>
+            <li class="base_meter4"><span></span><p>完成</p></li>
+         </ul></td>
+      </tr>
+    </table>
+  <div style="width:780px; float:left;">
+    <table width="782px;">
+      <tr>
+        <td style="border-bottom:1px #999999 solid; height:23px;">
+		  <a href="../travelitinerary/queryTravellerInfoInit.action" target="Bodyiframe"><div class="fr text-align_r">&nbsp;&nbsp;&nbsp;&nbsp;其他预订</div></a>
+          <a href="../trainorder/queryTrainInfoInit.action" target="Bodyiframe"><div class="fr text-align_r">&nbsp;&nbsp;&nbsp;&nbsp;火车票预订</div></a>
+          <a href="../hotel/initQueryHotel.action" target="Bodyiframe"><div class="fr text-align_r">&nbsp;&nbsp;&nbsp;&nbsp;酒店预订</div></a>
+          <div class="fl text-align_l bold red">&nbsp;&nbsp;国内机票预订</div>
+        </td>
+      </tr>
+    </table>
+    <div class="pt20 pb20 m0" style="width:800px; overflow:hidden;">
+      <div class="height25 mt5 overflow_h width800">
+        <div class="width120 fl text-align_l mr5">
+          <div class="width100 fl text-align_r mr5">&nbsp;</div>
+          <input id="SingleWay" name="SearchType" type="radio" value="S" onclick="displayControl(this.value)" checked/>
+          <label for="SingleWay">单&nbsp;&nbsp;程</label>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input id="RoundWay" name="SearchType" type="radio" value="D" onclick="displayControl(this.value)" />
+          <label for="RoundWay">往&nbsp;&nbsp;返</label>
+        </div>
+      </div>
+      <div class="height25 mt5 overflow_h width800">
+        <div class="width100 fl text-align_r mr5">出发：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div class="width166 fl text-align_l mr5">
+		  <div id="JpDate"><dl>
+	          <dt style="float:left">
+	            <input type="text" id="city1" name="city1" class="JpTextDate" value="中文/英文/三字码" style="ime-mode:disabled" /><div id='suggest1' class="ac_results"></div>
+	          </dt>
+	        </dl>
+	      	</div>
+        </div>
+      </div>
+      <div class="height25 mt5 overflow_h width800">
+        <div class="width100 fl text-align_r mr5">到达：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div class="width166 fl text-align_l mr5">
+		  <div id="Div1"><dl>
+          <dt style="float:left">
+            <input type="text" id="city2" name="city2" class="JpTextDate" value="中文/英文/三字码" style="ime-mode:disabled" /><div id='suggest2' class="ac_results"></div>
+          </dt>
+        </dl>
+        </div>
+        </div>
+        <div class="width100 fr text-align_l mr5">
+          <input type="button" class="btn_new" value="查询" onclick="query();" />
+        </div>
+      </div>
+      <!-- 单程 -->
+      <div class="height25 mt5 overflow_h width800" id="SW" style="display: ;">
+        <div class="width100 fl text-align_r mr5">出发日期：</div>
+        <div class="width166 fl text-align_l mr5">
+          <input id="DATE" type="text" onkeypress="checkText();" style="width:150px;" class="Wdate" onfocus="WdatePicker({skin:'ext',minDate:'%y-%M-%d'})"/>
+        </div>
+        <div class="width100 fl text-align_r mr5">出发时间：</div>
+        <div class="width166 fl text-align_l mr5">
+          <select class="input_select" style="width:155px;" id="QB_DEPTIME" name="QB_DEPTIME">
+            <option value="-1">不限</option>
+            <option value="00:00">00:00</option>
+            <option value="01:00">01:00</option>
+            <option value="02:00">02:00</option>
+            <option value="03:00">03:00</option>
+            <option value="04:00">04:00</option>
+            <option value="05:00">05:00</option>
+            <option value="06:00">06:00</option>
+            <option value="07:00">07:00</option>
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+            <option value="21:00">21:00</option>
+            <option value="22:00">22:00</option>
+            <option value="23:00">23:00</option>
+          </select>
+        </div>
+      </div>
+      <div class="height25 mt5 overflow_h width800" id="SW1" style="display: ">&nbsp;</div>
+      <!-- 单程 -->
+      <!-- 往返 -->
+      <div class="height25 mt5 overflow_h width800" id="RW" style="display: none;">
+        <div class="width100 fl text-align_r mr5">出发日期：</div>
+        <div class="width166 fl text-align_l mr5">
+          <input id="STARTDATE" type="text" onkeypress="checkText();" style="width:150px;" class="Wdate" onfocus="WdatePicker({skin:'ext',minDate:'%y-%M-%d',maxDate:'#F{$dp.$D(\'ENDDATE\')||\'2020-10-01\'}'})"/>
+        </div>
+        <div class="width100 fl text-align_r mr5">出发时间：</div>
+        <div class="width166 fl text-align_l mr5">
+          <select class="input_select" style="width:155px;" id="QB_DEPTIME_ROUND" name="QB_DEPTIME_ROUND">
+            <option value="-1">不限</option>
+            <option value="00:00">00:00</option>
+            <option value="01:00">01:00</option>
+            <option value="02:00">02:00</option>
+            <option value="03:00">03:00</option>
+            <option value="04:00">04:00</option>
+            <option value="05:00">05:00</option>
+            <option value="06:00">06:00</option>
+            <option value="07:00">07:00</option>
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+            <option value="21:00">21:00</option>
+            <option value="22:00">22:00</option>
+            <option value="23:00">23:00</option>
+          </select>
+        </div>
+      </div>
+      <div class="height25 mt5 overflow_h width800" id="RW1" style="display: none;">
+        <div class="width100 fl text-align_r mr5">返回日期：</div>
+        <div class="width166 fl text-align_l mr5">
+          <input id="ENDDATE" type="text" onkeypress="checkText();" style="width:150px;" class="Wdate" onfocus="WdatePicker({skin:'ext',minDate:'#F{$dp.$D(\'STARTDATE\')}',maxDate:'2020-10-01'})"/>
+        </div>
+        <div class="width100 fl text-align_r mr5">出发时间：</div>
+        <div class="width166 fl text-align_l mr5">
+          <select class="input_select" style="width:155px;" id="QB_ORGTIME_ROUND" name="QB_ORGTIME_ROUND">
+            <option value="-1">不限</option>
+            <option value="00:00">00:00</option>
+            <option value="01:00">01:00</option>
+            <option value="02:00">02:00</option>
+            <option value="03:00">03:00</option>
+            <option value="04:00">04:00</option>
+            <option value="05:00">05:00</option>
+            <option value="06:00">06:00</option>
+            <option value="07:00">07:00</option>
+            <option value="08:00">08:00</option>
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="14:00">14:00</option>
+            <option value="15:00">15:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+            <option value="21:00">21:00</option>
+            <option value="22:00">22:00</option>
+            <option value="23:00">23:00</option>
+          </select>
+        </div>
+      </div>
+      <!-- 高级查询 -->
+      <div class="height25 mt5 overflow_h width800" id="AdvInArea" style="display: ">
+        <div class="width100 fl text-align_r mr5">航空公司：</div>
+        <div class="width166 fl text-align_l mr5">
+          <select class="input_select" style="width:155px;" id="QB_AIRLINE">
+            <option value="-1">不限</option>
+             
+            <option value="MU">东方航空</option>
+            
+            <option value="CZ">南方航空</option>
+            
+            <option value="FM">上海航空</option>
+            
+            <option value="CA">国际航空</option>
+            
+            <option value="SC">山东航空</option>
+            
+            <option value="HU">海南航空</option>
+            
+            <option value="MF">厦门航空</option>
+            
+            <option value="ZH">深圳航空</option>
+            
+            <option value="3U">四川航空</option>
+            
+            <option value="HO">吉祥航空</option>
+            
+            <option value="G5">华夏航空</option>
+            
+            <option value="JR">幸福航空</option>
+            
+            <option value="KN">中联航</option>
+            
+            <option value="VD">鲲鹏航空</option>
+            
+            <option value="KY">昆明航空</option>
+            
+            <option value="8L">祥鹏航空</option>
+            
+            <option value="EU">鹰联航空</option>
+            
+            <option value="NS">河北航空</option>
+            
+            <option value="BK">奥凯航空</option>
+            
+            <option value="PN">西部航空</option>
+            
+            <option value="JD">首都航空</option>
+            
+            <option value="GS">天津航空</option>
+            
+            <option value="CN">大新华航空</option>
+             
+          </select>
+        </div>
+        <div class="width100 fl text-align_r mr5">舱位：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+        <div class="width166 fl text-align_l mr5">
+          <select class="input_select" style="width:155px;" id="QB_CABIN" name="QB_CABIN">
+            <option value="-1" >不限</option>
+            <option value="j">经济舱</option>
+            <option value="g">公务舱</option>
+            <option value="t">头等舱</option>
+          </select>
+        </div>
+      </div>
+      <div class="height25 mt5 overflow_h width800" id="Div2" style="display: "> </div>
+      <!-- 高级查询 -->
+    </div>
+  </div>
+  <div style="clear:both"></div>
+  <div style="height:10px;"></div>
+  <!-- 已有差旅人page，begin -->
+  <div style="width:780px; float:left;display: none" id="triveralDiv">
+    <table width="782px;">
+      <tr>
+        <td style="border-bottom:1px #999999 solid; height:23px;"><div class="fl text-align_l width125 bold red">&nbsp;&nbsp;已选差旅人</div></td>
+      </tr>
+    </table>
+    <!-- 已有代理审批人查询 -->
+    <table id="certTable" width="780px;">
+      <tr height="10px;">
+        <td><input name='certTRLastIndex' type='hidden' id='certTRLastIndex' value="0" /></td>
+      </tr>
+      <tr>
+      	<td>&nbsp;&nbsp;</td>
+        <td class="width120 text-align_l blue2;"><font color="#065991">中文姓名</font></td>
+        <td class="width120 text-align_l blue2;"><font color="#065991">英文姓名</font></td>
+        <td class="width120 text-align_l blue2;"><font color="#065991">手机号码</font></td>
+        <td class="width120 text-align_l blue2;"><font color="#065991">Email邮箱</font></td>
+        <td class="width120 text-align_c blue2;"><font color="#065991">删除</font></td>
+      </tr>
+    </table>
+  </div>
+  <!-- 已有差旅人page，end -->
+  <div style="clear:both"></div>
+  <div style="height:10px;"></div>
+  <div style="width:782px; float:left;">
+    <table width="782px;">
+      <tr>
+        <td style="border-bottom:1px #999999 solid; height:23px;"><div class="fl text-align_l width125 bold red">&nbsp;&nbsp;差旅人查询</div></td>
+      </tr>
+    </table>
+    <div class="pt20 pb20 m0" style="width:800px; overflow:hidden;">
+      <div class="height21 mt5 overflow_h width800" id="choose_alert">
+      	<div class="width600 fl mr5">&nbsp;&nbsp;如果不选择差旅人，默认为给自己预订，预订其他差旅人请选择&nbsp;&nbsp;&nbsp;
+      	  <input type="button" class="btn_Travel" id="search" value="差旅人" onclick="show('1');"/>&nbsp;&nbsp;&nbsp;
+        </div>
+      </div>
+      <div class="height21 mt5 overflow_h width800" style="display:none;" id="choose">
+        <div class="width75 fl text-align_r mr5">中文姓名：</div>
+        <div class="width85 fl text-align_l mr5">
+          <input class="input_text" name="userInfoEntity.FUI_NAME_CN" id="userInfoEntity.FUI_NAME_CN" type="text" onkeypress="checkText();" style="width:90px;" value=""/>
+        </div>
+        <div class="width75 fl text-align_r mr5">英文姓名：</div>
+        <div class="width85 fl text-align_l mr5">
+          <input class="input_text" name="userInfoEntity.FUI_NAME_EN" id="userInfoEntity.FUI_NAME_EN" type="text" onkeypress="checkText();" style="width:90px;" value=""/>
+        </div>
+        <div class="width75 fl text-align_r mr5">手机号码：</div>
+        <div class="width85 fl text-align_l mr5">
+          <input class="input_text" name="userInfoEntity.FUI_MOBILE" id="userInfoEntity.FUI_MOBILE" type="text" onkeypress="checkText();" style="width:90px;" value=""/>
+        </div>
+        <div class="width60 fl text-align_r mr5">Email：</div>
+        <div class="width88 fl text-align_l mr5">
+          <input class="input_text" name="userInfoEntity.FUI_EMAIL" id="userInfoEntity.FUI_EMAIL" type="text" onkeypress="checkText();" style="width:90px;" value=""/>
+        </div>
+        <div class="width80 fl text-align_r mr5">
+          <input type="button" class="btn_new" id="Button1" value="查询" onclick="queryTravellerInfo();"/>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="clear:both"></div>
+  <!-- 差旅人查询结果，begin -->
+  <!-- 差旅人结果页面：queryTriverResult.html -->
+  <iframe src="" id="iframeResult" name="iframeResult" height="150" width="100%" scrolling="no" marginwidth="0" frameborder="0" style=""></iframe>
+  <!-- 差旅人查询结果，end -->
+  <script type="text/javascript">
+      window.top.location.hash = "";
+  </script>
+</form>
+</body>
+</html>
+<!-- 城市层的样式失效，直接写在页面，估计是样式冲突，待查 david -->
+<div id="div3" style="position: absolute;left: 105px; top: 155px;">
+  <script language="javascript">setCity('city1', 'div1', 'True');</script>
+</div>
+<div id="div4" style="position: absolute;left: 105px; top: 185px;">
+  <script language="javascript">setCity('city2', 'div2', 'False');</script>
+</div>

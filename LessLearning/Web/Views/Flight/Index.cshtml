@@ -1,0 +1,89 @@
+﻿@{
+    ViewBag.Title = "Flight";
+    Layout = "~/Views/Flight/Master.cshtml";
+}
+
+        <form class="form-horizontal">
+            <div class="control-group  control-group-small">
+                <div class="controls">
+                    <label class="radio inline">
+                        <input type="radio" name="travelType" id="inputSingle" value="Single" checked />
+                        单程
+                    </label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="radio inline">
+                        <input type="radio" name="travelType" id="inputDouble" value="Double" />
+                        往返
+                    </label>
+                </div>
+            </div>
+            <div class="container-fluid containerDiv">
+                <div class="span6">
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="codeDep">出发城市</label>
+                        <div class="controls">
+                            <input type="text" id="codeDep" placeholder="出发城市" />
+                        </div>
+                    </div>
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="dateDep">出发日期</label>
+                        <div class="controls">
+                            <input type="text" id="dateDep" placeholder="出发日期" class="small" />
+                        </div>
+                    </div>
+                    <div class="control-group control-group-small hide" id="divDateArr">
+                        <label class="control-label" for="dateArr">返回日期</label>
+                        <div class="controls">
+                            <input type="text" id="dateArr" placeholder="返回日期" />
+                        </div>
+                    </div>
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="airline">航空公司</label>
+                        <div class="controls">
+                            <select id="airline">
+                                <option>不限</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6">
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="codeArr">到达城市</label>
+                        <div class="controls">
+                            <input type="text" id="codeArr" placeholder="到达城市" />
+                        </div>
+                    </div>
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="timeDep">出发时间</label>
+                        <div class="controls">
+                            <select id="timeDep">
+                                <option>不限</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group control-group-small hide" id="divTimeArr">
+                        <label class="control-label" for="timeArr">返回时间</label>
+                        <div class="controls">
+                            <select id="timeArr">
+                                <option>不限</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="cabin">舱位</label>
+                        <div class="controls">
+                                <select id="cabin">
+                                    <option>不限</option>
+                                </select>
+                        </div>
+                    </div>
+                    <br />
+                    <a href="@Url.Action("flight","flight")" class="btn btn-info">
+                        &nbsp;&nbsp;&nbsp;&nbsp;查&nbsp;&nbsp;询&nbsp;&nbsp;&nbsp;&nbsp;
+                    </a>
+                </div>
+            </div>
+
+        </form>
+    
+<script type="text/javascript" src="@Url.Content("~/Scripts/flight/index.js")"></script>

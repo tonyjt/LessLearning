@@ -1,0 +1,780 @@
+﻿@{
+    ViewBag.Title = "Flight";
+    Layout = "~/Views/Flight/Master.cshtml";
+}
+<link rel="stylesheet" href="/Content/airline.css" />
+上海-->北京 出发日期：2012-12-08
+<div class="span12 noMarginPadding">
+    
+    <div class="divCommon">
+        <form class="form-inline noMarginPadding">
+            <table>
+                <tr>
+                    <td>
+                        <label class="radio inline noMarginPadding">
+                            <input type="radio" name="travelType" id="inputSingle" value="Single" checked />
+                            单程
+                        </label>
+                        <label class="radio inline noMarginPadding">
+                            <input type="radio" name="travelType" id="inputDouble" value="Double" />
+                            往返
+                        </label>
+                    </td>
+                    <td class="padding-left-small">
+
+                        <input type="text" class="text-mini" id="codeDep" placeholder="出发城市" /></td>
+                    <td>
+                        <i class="icon-resize-horizontal"></i>
+                    </td>
+                    <td class="padding-right-small">
+                        <input type="text" class="text-mini" id="codeArr" placeholder="到达城市" />
+                    </td>
+                    <td class="padding-right-small">
+
+                        <input type="text" id="dateDep" placeholder="出发日期" class="text-mini" />
+                    </td>
+                    <td id="divDateArr" class="padding-right-small hide">
+                        <input type="text" id="dateArr" placeholder="返回日期" class="text-mini" />
+                    </td>
+                    <td>
+                        <a href="@Url.Content("~/Flight/Flight")" class="btn btn-info">&nbsp;&nbsp;查&nbsp;&nbsp;询&nbsp;&nbsp;
+                        </a>
+                        <a id="aSearch" href="javascript:void(0);">
+                            <i id="iSearch" class="icon-chevron-down"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                </tr>
+                <tr class="flight-search-tr hide" id="trAdvanced">
+                    <td colspan="7" style="text-align: left">航空公司
+                        <select id="airline" class="width-min margin-right-small">
+                            <option>不限</option>
+                        </select>
+                        舱位
+                    <select id="cabin" class="width-min margin-right-small">
+                        <option>不限</option>
+                    </select>
+                        出发时间
+                    <select id="timeDep" class="width-min margin-right-small">
+                        <option>不限</option>
+                    </select>
+                        <span id="spanTimeArr" class="hide">返回时间</span>
+                        <select id="timeArr" class="width-min margin-right-small hide">
+                            <option>不限</option>
+                        </select>
+
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+    <br />
+    <div>
+        <table class="table table-bordered noMargin">
+            <tr>
+                <td>
+                    <i class=" icon-arrow-left"></i>
+                </td>
+                <td>
+                    11-25&nbsp;&nbsp;周日<br />
+                    ¥570
+                </td>
+                <td>
+                    11-25&nbsp;&nbsp;周日<br />
+                    ¥570
+                </td>
+                <td>
+                    11-25&nbsp;&nbsp;周日<br />
+                    ¥570
+                </td>
+                <td>
+                    11-25&nbsp;&nbsp;周日<br />
+                    ¥570
+                </td>
+                <td>
+                    11-25&nbsp;&nbsp;周日<br />
+                    ¥570
+                </td>
+                <td>
+                    11-25&nbsp;&nbsp;周日<br />
+                    ¥570
+                </td>
+                <td>
+                    11-25&nbsp;&nbsp;周日<br />
+                    ¥570
+                
+                </td>
+                <td>
+                    <i class=" icon-arrow-right"></i>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+    <div>
+        <table class="table table-hover table-striped">
+            <thead style="text-align: center">
+                <tr>
+                    <td>时间
+                    </td>
+                    <td>机场
+                    </td>
+                    <td>航班
+                    </td>
+                    <td>机建+燃油
+                    </td>
+                    <td>舱位
+                    </td>
+                    <td>价格
+                    </td>
+
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_mu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_ca">中国国航</strong>
+                        &nbsp;CA985
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_hu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_mu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_mu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_mu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_mu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_mu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_mu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_mu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_mu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>07:00<br />
+                        09:00
+                    </td>
+                    <td>虹桥国际机场<br />
+                        首都国际机场          
+                    </td>
+                    <td>
+                        <strong class="pubFlights_mu">东方航空</strong>
+                        &nbsp;MU5137
+                        <br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机型：<a href="">738(中)</a>
+                    </td>
+                    <td>50+140
+                    </td>
+                    <td>经济舱
+                    </td>
+                    <td>
+                        <div class="row-fluid">
+                            <div class="span6">
+                                <span class="label label-important">¥680</span><br />
+                                3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                            </div>
+                            <div class="span6">
+                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
+
+                            </div>
+                        </div>
+                        <div id="divAllCabinMU5137" class="hide">
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                            <div class="row-fluid margin-top-small">
+                                <div class="span6">
+                                    <span class="label label-important">¥680</span><br />
+                                    3.7折 &nbsp;&nbsp;<a href="">退改签</a>
+                                </div>
+                                <div class="span6">
+                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                
+            </tbody>
+
+        </table>
+    </div>
+</div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/flight/flight.js")"></script>
