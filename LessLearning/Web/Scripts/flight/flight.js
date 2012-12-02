@@ -2,14 +2,14 @@
     loadFlightNavi(2);
 
     jQuery("#inputSingle").click(function () {
-        jQuery("#divDateArr").addClass("hide");
+        jQuery("#dateArr").addClass("hide");
         jQuery("#spanTimeArr").addClass("hide");
         jQuery("#timeArr").addClass("hide");
 
     });
 
     jQuery("#inputDouble").click(function () {
-        jQuery("#divDateArr").removeClass("hide");
+        jQuery("#dateArr").removeClass("hide");
         jQuery("#spanTimeArr").removeClass("hide");
         jQuery("#timeArr").removeClass("hide");
     });

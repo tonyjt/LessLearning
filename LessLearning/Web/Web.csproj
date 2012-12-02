@@ -167,6 +167,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FlightController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MemberController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -177,14 +178,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="51obtFlight.html" />
+    <Content Include="bizstrap.html" />
     <Content Include="Content\airline.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bizstrap\color_scheme.css" />
     <Content Include="Content\bizstrap\custom.css" />
-    <Content Include="Content\bizstrap\flexslider.css" />
-    <Content Include="Content\bizstrap\isotope.css" />
-    <Content Include="Content\bizstrap\jquery.fancybox.css" />
-    <Content Include="Content\bizstrap\rs-plugin\settings.css" />
+    <Content Include="Content\flexslider.css" />
+    <Content Include="Content\isotope.css" />
+    <Content Include="Content\jquery.fancybox.css" />
+    <Content Include="Content\bizstrap\settings.css" />
     <Content Include="Content\bizstrap\rs-responsive.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -243,11 +245,38 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\less\Site.less" />
+    <Content Include="Content\less\SignIn.less">
+      <Compile>True</Compile>
+      <Minify>True</Minify>
+    </Content>
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="img\bizstrap\arrow_large_left.png" />
+    <Content Include="img\bizstrap\arrow_large_right.png" />
+    <Content Include="img\bizstrap\arrow_left.png" />
+    <Content Include="img\bizstrap\arrow_right.png" />
+    <Content Include="img\bizstrap\bullets.png" />
+    <Content Include="img\bizstrap\loader.gif" />
+    <Content Include="img\bizstrap\menu_icons.png" />
+    <Content Include="img\bizstrap\shadow1.png" />
+    <Content Include="img\bizstrap\slider01.png" />
+    <Content Include="img\bizstrap\slider02.png" />
+    <Content Include="img\bizstrap\slider03.png" />
+    <Content Include="img\bizstrap\slider04.png" />
+    <Content Include="img\bizstrap\socials_icons.png" />
+    <Content Include="img\bizstrap\testimonials_block_bg.gif" />
+    <Content Include="img\bizstrap\timer.png" />
     <Content Include="img\flight.gif" />
     <Content Include="img\bizstrap\logo.png" />
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
+    <Content Include="img\airlines.png" />
+    <Content Include="Scripts\bizstrap\extension.js" />
+    <Content Include="Scripts\jquery.flexslider\jquery.flexslider.js" />
+    <Content Include="Scripts\jquery.isotope\jquery.isotope.js" />
+    <Content Include="Scripts\jquery.isotope\jquery.isotope.min.js" />
+    <Content Include="Scripts\jquery.themepunch\jquery.themepunch.plugins.min.js" />
+    <Content Include="Scripts\jquery.themepunch\jquery.themepunch.revolution.js" />
+    <Content Include="Scripts\jquery.themepunch\jquery.themepunch.revolution.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bizstrap\custom.js" />
     <Content Include="Scripts\flight\flight.js" />
@@ -258,9 +287,10 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
-    <Content Include="Scripts\bizstrap\jquery.fancybox.pack.js" />
-    <Content Include="Scripts\bizstrap\jquery.flexslider-min.js" />
-    <Content Include="Scripts\bizstrap\jquery.isotope.js" />
+    <Content Include="Scripts\jquery.fancybox\jquery.fancybox.pack.js" />
+    <Content Include="Scripts\jquery.flexslider\jquery.flexslider.min.js" />
+    <Content Include="Scripts\jquery.isotope.js" />
+    <Content Include="Scripts\jquery.themepunch\jquery.themepunch.plugins.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -272,8 +302,6 @@
     <Content Include="Scripts\less-1.3.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\bizstrap\revolution.custom.js" />
-    <Content Include="Scripts\bizstrap\rs-plugin\jquery.themepunch.plugins.min.js" />
-    <Content Include="Scripts\bizstrap\rs-plugin\jquery.themepunch.revolution.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -317,10 +345,13 @@
     <Content Include="Views\Flight\Index.cshtml" />
     <Content Include="Views\Flight\Master.cshtml" />
     <Content Include="Views\Flight\Flight.cshtml" />
+    <Content Include="Views\Member\SignIn.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\bizstrap\rs-plugin\" />
     <Folder Include="img\airline\" />
+    <Folder Include="Scripts\bizstrap\rs-plugin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

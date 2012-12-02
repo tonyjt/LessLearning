@@ -33,33 +33,33 @@
 
                         <input type="text" id="dateDep" placeholder="出发日期" class="text-mini" />
                     </td>
-                    <td id="divDateArr" class="padding-right-small hide">
-                        <input type="text" id="dateArr" placeholder="返回日期" class="text-mini" />
+                    <td id="divDateArr" class="padding-right-small width-mini">
+                        <input type="text" id="dateArr" placeholder="返回日期" class="text-mini hide"  />
                     </td>
                     <td>
                         <a href="@Url.Content("~/Flight/Flight")" class="btn btn-info">&nbsp;&nbsp;查&nbsp;&nbsp;询&nbsp;&nbsp;
                         </a>
                         <a id="aSearch" href="javascript:void(0);">
-                            <i id="iSearch" class="icon-chevron-down"></i></a>
+                            高级<i id="iSearch" class="icon-chevron-down"></i></a>
                     </td>
                 </tr>
                 <tr>
                 </tr>
                 <tr class="flight-search-tr hide" id="trAdvanced">
                     <td colspan="7" style="text-align: left">航空公司
-                        <select id="airline" class="width-min margin-right-small">
+                        <select id="airline" class="width-mini margin-right-small">
                             <option>不限</option>
                         </select>
                         舱位
-                    <select id="cabin" class="width-min margin-right-small">
+                    <select id="cabin" class="width-mini margin-right-small">
                         <option>不限</option>
                     </select>
                         出发时间
-                    <select id="timeDep" class="width-min margin-right-small">
+                    <select id="timeDep" class="width-mini margin-right-small">
                         <option>不限</option>
                     </select>
                         <span id="spanTimeArr" class="hide">返回时间</span>
-                        <select id="timeArr" class="width-min margin-right-small hide">
+                        <select id="timeArr" class="width-mini margin-right-small hide">
                             <option>不限</option>
                         </select>
 

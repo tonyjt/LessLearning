@@ -20,6 +20,22 @@ namespace Web
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jquerythemepunch").IncludeDirectory
+                ("~/Scripts/jquery.themepunch", "*.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryisotope").IncludeDirectory
+                ("~/Scripts/jquery.isotope", "*.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryfancybox").IncludeDirectory
+                ("~/Scripts/jquery.fancybox", "*.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/jqueryflexslider").IncludeDirectory
+                ("~/Scripts/jquery.flexslider", "*.js"));
+
+
+
+
+
             // 使用 Modernizr 的开发版本进行开发和了解信息。然后，当你做好
             // 生产准备时，请使用 http://modernizr.com 上的生成工具来仅选择所需的测试。
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -56,7 +72,9 @@ namespace Web
             lessBundle.Transforms.Add(new LessTransform());
             lessBundle.Transforms.Add(new CssMinify());
             bundles.Add(lessBundle);
-
+            
+            //css
+            bundles.Add(new StyleBundle("~/Content/css").IncludeDirectory("~/Content", "*.css"));
             //BundleTable.EnableOptimizations = true;
         }
     }

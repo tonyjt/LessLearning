@@ -1,0 +1,152 @@
+﻿@{
+    ViewBag.Title = "SignIn";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!--  SEO STUFF START HERE -->
+    <title>恒雁差旅系统</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <meta name="robots" content="follow, index" />
+    <!--  SEO STUFF END -->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    @Scripts.Render("~/bundles/jquery")
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/bizstrap")
+    @Styles.Render("~/Content/less")
+    @Styles.Render("~/Content/css")
+    <!--  revolution slider plugin : begin -->        
+        <link rel="stylesheet" type="text/css" href="/Content/bizstrap/settings.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="/Content/bizstrap/rs-responsive.css" media="screen" />
+        <!--  revolution slider plugin : end -->
+    @*<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css" />
+    *@
+</head>
+<body>
+    <div class="main-content">
+        <div class="container">
+            <div class="span12">
+                <div class="bannercontainer">
+        <div class="banner tp-simpleresponsive">
+            <ul>
+                <!-- MAIN CONTENT AREA: SLIDER BANNER (REVOLUTION SLIDER) - SLIDE 1 [SLIDE STYLE=BOXFADE] -->
+                <li class="slide1" data-transition="boxfade" data-slotamount="5" data-masterspeed="300" style="visibility: visible; left: 0px; top: 0px; z-index: 18; opacity: 1;">
+                    <div class="slotholder">
+                        <img alt="" src="@Url.Content("~/img/bizstrap/slider01.png")" class="defaultimg" style="width: 300px; height: 200px; opacity: 0;">
+                        <div class="slot" style="position: absolute; top: 0px; left: 0px; overflow: hidden; width: 940px; height: 400px">
+                            <div class="slotslide" style="position: absolute; top: 0px; left: -940px; width: 940px; height: 400px; overflow: hidden; -webkit-transition: left 900ms ease, opacity 900ms ease, -webkit-transform 900ms ease; opacity: 1; -webkit-transform: rotate(0deg);">
+                                <img style="position: absolute; top: 0px; left: 0px; width: 940px; height: 400px" src="@Url.Content("~/img/bizstrap/slider01.png")">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="caption sft carousel-caption start" data-x="110" data-y="110" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background-image: none; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0.9301333210959122; left: 110px; top: 106.50666605479562px; visibility: visible; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="middle">Beautiful, clean, ultra-responsive &amp; highly flexible</p>
+
+                    </div>sli
+                    <div class="caption sfl carousel-caption start" data-x="98" data-y="141" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background-image: none; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0.9301333210959122; left: 94.50666605479562px; top: 141px; visibility: visible; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="big">An Incredible New</p>
+                    </div>
+                    <div class="caption sfl carousel-caption start" data-x="98" data-y="191" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background-image: none; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0.9301333210959122; left: 94.50666605479562px; top: 191px; visibility: visible; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="big">HTML5 Template!</p>
+                    </div>
+                    <div class="caption sfb carousel-caption start" data-x="111" data-y="247" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background-image: none; width: 436px; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0.9301333210959122; left: 111px; top: 250.4933339452044px; visibility: visible; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="small">Bring your website into the 21st century with bizstrap. Beautiful, clean, ultra-responsive and highly flexible bizstrap puts you firmly in control of your new site build or site bizstrap.</p>
+                    </div>
+
+                </li>
+                <!-- MAIN CONTENT AREA: SLIDER BANNER (REVOLUTION SLIDER) - SLIDE 2 [SLIDE STYLE=LEFT] -->
+                <li class="slide2" data-transition="slideleft" data-slotamount="10" data-masterspeed="300" style="visibility: visible; left: 0px; top: 0px; z-index: 20; opacity: 1;">
+                    <div class="slotholder">
+                        <img alt="" src="@Url.Content("~/img/bizstrap/slider02.png")" class="defaultimg" style="width: 940px; height: 400px; opacity: 0;">
+                        <div class="slot" style="position: absolute; top: 0px; left: 0px; overflow: hidden; width: 940px; height: 400px">
+                            <div class="slotslide" style="position: absolute; top: 0px; left: 0px; width: 940px; height: 400px; overflow: hidden; -webkit-transform: rotate(0deg); -webkit-transition: left 900ms ease, top 900ms ease, opacity 900ms ease, -webkit-transform 900ms ease; opacity: 1;">
+                                <img style="position: absolute; top: 0px; left: 0px; width: 940px; height: 400px" src="@Url.Content("~/img/bizstrap/slider02.png")">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="caption sft carousel-caption start" data-x="472" data-y="69" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background-image: none; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 472px; top: 19px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="middle">Is your business website mobile ready?</p>
+
+                    </div>
+                    <div class="caption sfr carousel-caption start" data-x="462" data-y="107" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background-image: none; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 512px; top: 107px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="big">20% of all web</p>
+                    </div>
+                    <div class="caption sfl carousel-caption start" data-x="462" data-y="156" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background-image: none; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 412px; top: 156px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="big">traffic today is from</p>
+                    </div>
+                    <div class="caption sfl carousel-caption start" data-x="462" data-y="205" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background-image: none; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 412px; top: 205px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="big">mobile devices</p>
+                    </div>
+                    <div class="caption sfb carousel-caption start" data-x="474" data-y="262" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background-image: none; width: 436px; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 474px; top: 312px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="small">The mobile revolution is here. Is your business ready for it? Built using the latest web technology platform and framework; HTML5, CSS3 and Twitter Bootstrap, bizstrap allows you to create one site that renders beautifully on all devices, including computers, tablet and phones.</p>
+                    </div>
+                </li>
+                <!-- MAIN CONTENT AREA: SLIDER BANNER (REVOLUTION SLIDER) - SLIDE 3 [SLIDE STYLE=SLIDE DOWN] -->
+                <li class="slide3" data-transition="slidedown" data-slotamount="1" data-masterspeed="300" style="visibility: visible; left: 0px; top: 0px; z-index: 18; opacity: 1;">
+                    <div class="slotholder">
+                        <img alt="" src="@Url.Content("~/img/bizstrap/slider03.png")" class="defaultimg" style="width: 940px; height: 400px; opacity: 0;"></div>
+                    <div class="caption sft carousel-caption start" data-x="43" data-y="184" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background-image: none; padding: 15px 15px 15px 0px; font-size: 12px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 43px; top: 134px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="middle">Create beautiful pages quickly and easily...</p>
+                    </div>
+                    <div class="caption sfl carousel-caption start" data-x="0" data-y="228" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background-image: none; padding: 15px 15px 15px 0px; width: 781px; font-size: 12px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: -50px; top: 228px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="big">Over 30 Shortcuts and Rapid-Design Page Templates!</p>
+                    </div>
+                    <div class="caption sfb carousel-caption start" data-x="0" data-y="281" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background-image: none; padding: 15px 15px 15px 0px; width: 100%; font-size: 12px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 0px; top: 331px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="small">Creating beautiful and highly functional web pages doesn’t have to take hours. In fact, with over 30 pre-made page templates, bizstrap makes<br>
+                            creating great looking web pages quick and easy.</p>
+                    </div>
+                </li>
+                <!-- MAIN CONTENT AREA: SLIDER BANNER (REVOLUTION SLIDER) - SLIDE 5 [SLIDE STYLE=SLOTFADE HORIZONTAL] -->
+                <li class="slide5" data-transition="slotfade-horizontal" data-masterspeed="300" data-slotamount="20" style="visibility: visible; left: 0px; top: 0px; z-index: 18; opacity: 1;">
+                    <div class="slotholder">
+                        <img alt="" src="@Url.Content("~/img/bizstrap/slider04.png")" class="defaultimg" style="width: 940px; height: 400px; opacity: 0;"></div>
+                    <div class="caption sft carousel-caption start" data-x="468" data-y="71" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background-image: none; padding: 15px 15px 15px 0px; font-size: 12px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 468px; top: 21px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="middle">Smart, very smart indeed!</p>
+                    </div>
+                    <div class="caption sfr carousel-caption start" data-x="454" data-y="105" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background-image: none; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 504px; top: 105px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="big">The Smart Choice for</p>
+                    </div>
+                    <div class="caption sfr carousel-caption start" data-x="454" data-y="154" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background-image: none; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 504px; top: 154px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="big">Building Your</p>
+                    </div>
+                    <div class="caption sfr carousel-caption start" data-x="454" data-y="205" data-speed="1000" data-start="1000" data-easing="easeOutBack" style="background-image: none; font-size: 12px; padding: 15px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 504px; top: 205px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="big">Business Website</p>
+                    </div>
+                    <div class="caption sfb carousel-caption start" data-x="480" data-y="268" data-speed="1000" data-start="1000" data-easing="easeInBack" style="background-image: none; padding: 15px 15px 15px 0px; font-size: 12px; margin: 0px; border: 0px; line-height: 20px; white-space: nowrap; opacity: 0; left: 480px; top: 318px; visibility: hidden; background-position: initial initial; background-repeat: initial initial;">
+                        <p class="small">Affordable, effective and easy-to-use bizstrap is the smart choice for building and managing your business website. Smart, very smart indeed!</p>
+                    </div>
+                </li>
+
+            </ul>
+            <div class="tp-bannertimer" style="width: 1.9325842696629212%; overflow: hidden;"></div>
+            <div class="tp-loader" style="display: none;"></div>
+        </div>
+        <div class="tp-bannershadow tp-shadow1" style="width: 940px;"></div>
+        <div class="tp-bullets simplebullets round" style="visibility: visible; width: 92px; left: 424px; bottom: 10px; opacity: 0;">
+            
+        </div>
+        <div style="visibility: visible; position: absolute; left: 0px; top: 200px; opacity: 0;" class="tp-leftarrow tparrows round large"></div>
+        <div style="visibility: visible; position: absolute; left: 894px; top: 200px; opacity: 0;" class="tp-rightarrow tparrows round large"></div>
+    </div>
+            
+            </div>
+    
+        </div>
+    </div>
+    
+    @Scripts.Render("~/bundles/jquerythemepunch")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/less")
+    @Scripts.Render("~/bundles/bizstrap")
+    @Scripts.Render("~/bundles/jqueryisotope")
+    @Scripts.Render("~/bundles/jqueryfancybox")
+    @Scripts.Render("~/bundles/jqueryflexslider")
+</body>
+</html>
