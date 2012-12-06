@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Flight/Master.cshtml";
+}
+
+
+
+<div>
+    <div class="alert alert-info padding-small">
+        <strong>机票信息确认</strong> &nbsp;&nbsp;&nbsp;&nbsp;以下是您预订的机票及价格信息，请您认真核对，填写。
+    </div>
+    <div class="divCommon padding-left-small">
+        <table style="width: 100%">
+            <tr>
+                <td>
+                    <strong>行程：</strong> 上海-北京
+                </td>
+                <td>
+                    <strong>起飞时间：</strong>2012-12-20 07:55 (T2)
+                </td>
+                <td>
+                    <strong>机票单价：</strong>¥790
+                </td>
+                <td>
+                    <strong>燃油费：</strong>¥130
+                </td>
+            </tr>
+            <tr class="search-tr">
+                <td>
+                    <strong>航班：</strong>CA - 1858
+                
+                </td>
+                <td>
+
+                    <strong>抵达时间：</strong>2012-12-20 10:15 (T3)
+                
+                </td>
+                <td>
+                    <strong>机场建设费：</strong>¥50
+                </td>
+                <td>
+                    <strong>单张总价：</strong><span class="label label-important">¥680</span>
+                </td>
+            </tr>
+            <tr class="search-tr">
+                <td colspan="4">
+                    <strong>退改签规定：</strong><br />
+                    <table style="width: 100%">
+                        <tr>
+                            <td nowrap class="verticalalign-top">退票规定：
+                            </td>
+                            <td>航班起飞前2小时之前取消定座每次收取30%退票费，航班起飞2小时内及航班起飞后取消定座每次收取40%的退票费
+                            </td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="verticalalign-top">改签规定：
+                            </td>
+                            <td>不允许签转；起飞前2小时之前取消定座每次收取20%的改期费，航班时内及航班起飞后取消定座每次收取30%的改期费</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br />
+<hr class="hrDotline" />
+<div class="margin-top">
+    <div class="alert alert-info padding-small">
+        <strong>差旅人信息</strong> &nbsp;&nbsp;&nbsp;&nbsp;请确认差旅人信息（姓名、证件号码），以免在办理登机手续时发生问题。
+    </div>
+    @Html.Partial("Partial/_SearchUserPartial")
+
+</div>
+
+<hr class="hrDotline" />
+<div class="margin-top">
+    <div class="alert alert-info padding-small">
+        <strong>联系信息</strong> &nbsp;&nbsp;&nbsp;&nbsp;请确认联系人信息（手机号码、E-mail），以便我们与您联系。
+    </div>
+    <div class="divCommon padding-left-small">
+        <div class="row-fluid">
+            <div class="span4">
+                联系人：张三
+            </div>
+            <div class="span4">
+                联系电话：13712345678
+            </div>
+            <div class="span4">
+                Email：email.email@mail.com
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="hrDotline" />
+<div class="margin-top">
+    <div class="alert alert-error padding-small">
+        <strong>差旅政策</strong>
+    </div>
+    <div class="divCommon padding-left-small">
+        <div class="row-fluid">
+            <div class="span2">
+                违背政策项目:
+            </div>
+            <div class="span10">
+                1.&nbsp;&nbsp;航班价格不是最低价<br />
+                2.&nbsp;&nbsp;舱位不是经济舱
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="hrDotline" />
+<div class="margin-top">
+    <div class="alert alert-info padding-small">
+        <strong>备注</strong> &nbsp;&nbsp;&nbsp;&nbsp;如果违背了政策，必须说明原因
+    </div>
+    <div class="">
+        <div class="row-fluid">
+            <div class="span12">
+                <textarea placeholder="填写备注" style="width: 98%; height: 100px;" dir="ltr"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="textAlign-center">
+    <a href="@Url.Action("finish")" class="btn btn-success">确认预定</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="javascript:alert('保存成功,可到行程管理中查询')" class="btn">保存</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="" class="btn">取消</a>
+</div>
+
+
+
+
+
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/flight/order.js")"></script>

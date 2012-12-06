@@ -1,0 +1,833 @@
+﻿@{
+    ViewBag.Title = "Hotel";
+    Layout = "~/Views/Hotel/Master.cshtml";
+}
+非协议酒店
+<div class="span12 noMarginPadding">
+    <div class="divCommon">
+        <form class="form-inline noMarginPadding">
+            <table style="width: 100%">
+                <tr>
+                    <td>酒店类型
+                        <select id="selectType" class="width-mini">
+                            <option>非协议酒店</option>
+                        </select>
+                    </td>
+                    <td>城市
+                    </td>
+                    <td>
+                        <input type="text" id="" placeholder="目的城市" class="text-mini" />
+                    </td>
+
+                    <td class="padding-left-small">
+                        <input type="text" class="text-mini" id="dateBegin" placeholder="入住日期" />
+                    </td>
+                    <td class="padding-left-small">
+                        <input type="text" class="text-mini" id="dateEnd" placeholder="离开日期" />
+                    </td>
+
+                    <td class="padding-left-small">
+                        <a href="" class="btn btn-info">&nbsp;&nbsp;查&nbsp;&nbsp;询&nbsp;&nbsp;
+                        </a>
+                    </td>
+                </tr>
+                <tr></tr>
+                <tr class="search-tr" style="margin-top: 10px;">
+                    <td>酒店星级
+                        <select id="" class="width-mini">
+                            <option>--任意--</option>
+                        </select>
+                    </td>
+                    <td>房价
+                    </td>
+                    <td>
+                        <select id="" class="width-mini">
+                            <option>不限</option>
+                        </select>
+                    </td>
+
+                    <td class="padding-left-small">
+                        <input type="text" class="text-mini" placeholder="酒店名称" />
+                    </td>
+                    <td class="padding-left-small" colspan="2">
+                        <input type="text" placeholder="位置" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </div>
+    <br />
+    <hr />
+
+    <div class="row-fluid padding-top-small" id="hotel123">
+        <div class="span2 textAlignCenter">
+            <img src="http://www.elongstatic.com/imageapp/hotels/hotelimages/0201/40201982/3_8540ff82-308c-486c-a01b-7df96c6995ba.jpg" />
+            <br />
+            <span>三星级</span>
+        </div>
+        <div class="span10">
+            <a href="">上海嘉汇华美达广场大酒店</a>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star-empty"></i>
+            <i class="icon-star-empty"></i>
+            <br />
+            地址：上海市徐汇区天钥桥路325-327号（徐家汇地区，近南丹东路,腾飞广场旁）
+                <table class="table table-hover table-striped margin-bottom-small">
+                    <thead>
+                        <tr>
+                            <td>房型
+                            </td>
+                            <td>床型
+                            </td>
+                            <td>早餐
+                            </td>
+                            <td>宽带
+                            </td>
+                            <td>备注
+                            </td>
+                            <td>日均价
+                            </td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>商务房
+                            </td>
+                            <td>双人床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥679</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>双人床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥719</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>双人床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥799</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>豪华房
+                            </td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥764</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥809</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥899</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>豪华双人房
+                            </td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥764</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥809</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥899</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+
+                        <tr  class="bed hide">
+                            <td>特色商务房
+                            </td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥764</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥809</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥899</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            <div class="textAlign-right">
+                <a href="javascript:showAllHotel('123');" id="a123">展开全部房型（11）<i class="icon-chevron-down" id="i123"></i></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+    <br />
+    <hr class="hrDotline" />
+
+    <div class="row-fluid padding-top-small" id="hotel456">
+        <div class="span2 textAlignCenter">
+            <img src="http://www.elongstatic.com/imageapp/hotels/hotelimages/0201/40201167/3_00e08378-38ab-4db9-8649-933cc2fe33ee.jpg" />
+            <br />
+            <span>五星级</span>
+        </div>
+        <div class="span10">
+            <a href="">上海中福世福汇大酒店</a>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <br />
+            地址：地址：上海市黄浦区广东路339号（近山东中路口）
+                <table class="table table-hover table-striped margin-bottom-small">
+                    <thead>
+                        <tr>
+                            <td>房型
+                            </td>
+                            <td>床型
+                            </td>
+                            <td>早餐
+                            </td>
+                            <td>宽带
+                            </td>
+                            <td>备注
+                            </td>
+                            <td>日均价
+                            </td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>商务房
+                            </td>
+                            <td>双人床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥679</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>双人床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥719</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>双人床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥799</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>豪华房
+                            </td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥764</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥809</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥899</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>豪华双人房
+                            </td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥764</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥809</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥899</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+
+                        <tr  class="bed hide">
+                            <td>特色商务房
+                            </td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥764</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥809</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥899</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            <div class="textAlign-right">
+                <a href="javascript:showAllHotel('456');"  id="a456">展开全部房型（11）<i class="icon-chevron-down" id="i456"></i></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+    <br />
+    <hr class="hrDotline" />
+
+    <div class="row-fluid padding-top-small" id="hotel789">
+        <div class="span2 textAlignCenter">
+            <img src="http://www.elongstatic.com/imageapp/hotels/hotelimages/0201/40201934/3_5343b96a-4f33-4aef-aaf8-189ba6d68339.jpg" />
+            <br />
+            <span>四星级</span>
+        </div>
+        <div class="span10">
+            <a href="">上海万和亚隆国际酒店</a>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star"></i>
+            <i class="icon-star-empty"></i>
+            <br />
+            地址：地址：上海市浦东新区崮山路688号（近羽山路）
+                <table class="table table-hover table-striped margin-bottom-small">
+                    <thead>
+                        <tr>
+                            <td>房型
+                            </td>
+                            <td>床型
+                            </td>
+                            <td>早餐
+                            </td>
+                            <td>宽带
+                            </td>
+                            <td>备注
+                            </td>
+                            <td>日均价
+                            </td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>商务房
+                            </td>
+                            <td>双人床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥679</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>双人床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥719</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>双人床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥799</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>豪华房
+                            </td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥764</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥809</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥899</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>豪华双人房
+                            </td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥764</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥809</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥899</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+
+                        <tr  class="bed hide">
+                            <td>特色商务房
+                            </td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前14天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥764</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td>提前5天起
+                            </td>
+                            <td>
+                                <span class="label label-important">¥809</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                        <tr class="bed hide">
+                            <td></td>
+                            <td>大床/双床
+                            </td>
+                            <td>不含早
+                            </td>
+                            <td>免费
+                            </td>
+                            <td></td>
+                            <td>
+                                <span class="label label-important">¥899</span>
+                            </td>
+                            <td>
+                                <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+             <div class="textAlign-right">
+                <a href="javascript:showAllHotel('789');" id="a789">展开全部房型（11）<i class="icon-chevron-down" id="i789"></i></a>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </div>
+        </div>
+    </div>
+
+    <hr class="hrDotline" />
+    <br />
+
+    <div class="pagination pagination-centered">
+        <ul>
+            <li class="disabled"><a href="#">«</a></li>
+            <li class="active"><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">»</a></li>
+        </ul>
+    </div>
+</div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/hotel/hotel.js")"></script>

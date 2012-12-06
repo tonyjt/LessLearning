@@ -33,7 +33,7 @@ namespace Web
                 ("~/Scripts/jquery.flexslider", "*.js"));
 
 
-
+            bundles.Add(new ScriptBundle("~/bundles/js").Include("~/Scripts/site.js"));
 
 
             // 使用 Modernizr 的开发版本进行开发和了解信息。然后，当你做好

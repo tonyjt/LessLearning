@@ -37,7 +37,7 @@
                         <input type="text" id="dateArr" placeholder="返回日期" class="text-mini hide"  />
                     </td>
                     <td>
-                        <a href="@Url.Content("~/Flight/Flight")" class="btn btn-info">&nbsp;&nbsp;查&nbsp;&nbsp;询&nbsp;&nbsp;
+                        <a href="" class="btn btn-info">&nbsp;&nbsp;查&nbsp;&nbsp;询&nbsp;&nbsp;
                         </a>
                         <a id="aSearch" href="javascript:void(0);">
                             高级<i id="iSearch" class="icon-chevron-down"></i></a>
@@ -45,7 +45,7 @@
                 </tr>
                 <tr>
                 </tr>
-                <tr class="flight-search-tr hide" id="trAdvanced">
+                <tr class="search-tr hide" id="trAdvanced">
                     <td colspan="7" style="text-align: left">航空公司
                         <select id="airline" class="width-mini margin-right-small">
                             <option>不限</option>
@@ -159,7 +159,7 @@
                                 3.7折 &nbsp;&nbsp;<a href="">退改签</a>
                             </div>
                             <div class="span6">
-                                <a href="" class="btn btn-success btn-small">预订</a><br />
+                                <a href="@Url.Action("Order")" class="btn btn-success btn-small">预订</a><br />
                                 <a id="aAllCabinMU5137" href="javascript:void(0);">更多舱位<i id="iAllCabinMU5137" class="icon-chevron-down"></i></a>
 
                             </div>
@@ -171,7 +171,7 @@
                                     3.7折 &nbsp;&nbsp;<a href="">退改签</a>
                                 </div>
                                 <div class="span6">
-                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+                                    <a href="@Url.Action("order")" class="btn btn-success btn-small">预订</a><br />
 
                                 </div>
                             </div>
@@ -181,7 +181,7 @@
                                     3.7折 &nbsp;&nbsp;<a href="">退改签</a>
                                 </div>
                                 <div class="span6">
-                                    <a href="" class="btn btn-success btn-small">预订</a><br />
+                                    <a href="@Url.Action("Order")" class="btn btn-success btn-small">预订</a><br />
 
                                 </div>
                             </div>

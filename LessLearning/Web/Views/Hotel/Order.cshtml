@@ -1,0 +1,197 @@
+﻿@{
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Hotel/Master.cshtml";
+}
+
+<div>
+    <div class="alert alert-info padding-small">
+        <strong>酒店信息确认</strong> &nbsp;&nbsp;&nbsp;&nbsp;以下是您预订的酒店及价格信息，请您认真核对。
+    </div>
+    <div class="divCommon padding-left-small">
+        <table style="width: 100%">
+            <tr>
+                <td>
+                    <strong>酒店：</strong> 上海嘉汇华美达广场大酒店
+                </td>
+                <td>
+                    <strong>入住日期：</strong>2012-12-20
+                </td>
+                <td>
+                    <strong>床型：</strong>大床
+                </td>
+                <td>
+                    <strong>早餐：</strong>不含早
+                </td>
+            </tr>
+            <tr class="search-tr">
+                <td>
+                    <strong>房型：</strong>商务房
+                
+                </td>
+                <td>
+
+                    <strong>离开日期：</strong>2012-12-21
+                
+                </td>
+                <td>
+                    <strong>宽带：</strong>免费
+                </td>
+                <td>
+                    <strong>价格：</strong>¥584 x1=<span class="label label-important">¥584</span>
+                </td>
+            </tr>
+            <tr class="search-tr">
+                <td colspan="4">房间数：
+                    <select id="selectType" class="width-mini noMargin input-height-small">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                    </select>
+                    &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    最晚到达时间：
+                    <select id="selectType" class="width-mini noMargin input-height-small">
+                        <option>6:00</option>
+                        <option>7:00</option>
+                        <option>8:00</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="search-tr">
+                <td colspan="4">
+                    <strong>担保规则：</strong><br />
+                    <table style="width: 100%">
+                        <tr>
+                            <td nowrap class="verticalalign-top">
+                                <span class="label ">1</span>
+                            </td>
+                            <td>在12.11.30至12.12.31 入住 在18:00至6:00到店，需要您提供信用卡担保。客人最早到店1天前可以变更取消，之后无法变更取消，如未入住，将扣除第一晚房费作为违约金。
+                            </td>
+                        </tr>
+                        <tr>
+                            <td nowrap class="verticalalign-top">
+                                <span class="label ">2</span>
+                            </td>
+                            <td>在12.11.30至12.12.31 入住 ，需要您提供信用卡担保。客人最早到店1天前可以变更取消，之后无法变更取消，如未入住，将扣除第一晚房费作为违约金。</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<br />
+<hr class="hrDotline" />
+<div class="margin-top">
+    <div class="alert alert-info padding-small">
+        <strong>差旅人信息</strong>
+    </div>
+    @Html.Partial("Partial/_SearchUserPartial")
+
+</div>
+
+<hr class="hrDotline" />
+<div class="margin-top">
+    <div class="alert alert-info padding-small">
+        <strong>信用卡信息</strong>
+    </div>
+    <div class="divCommon padding-left-small">
+        <div>
+            <label class="radio">
+                <input type="radio" checked name="creditCard" />
+                无需信用卡
+            </label>
+        </div>
+        <div>
+            <label class="radio">
+                <input type="radio" name="creditCard" />
+                银行：工商银行&nbsp;&nbsp;卡号：210123198508181337&nbsp;&nbsp;姓名：张三
+            </label>
+        </div>
+        <div>
+            <label class="radio">
+                <input type="radio" name="creditCard" />
+                银行：招商银行&nbsp;&nbsp;卡号：210123198508181337&nbsp;&nbsp;姓名：李四
+            </label>
+        </div>
+
+        <table style="width: 100%">
+            <tr>
+                <td>校验码：<input type="text" class="text-mini text-input-height-small noMargin" value="">
+                </td>
+                <td>有效期：<input type="text" class="text-mini text-input-height-small noMargin" value="">
+                </td>
+                <td>证件：<select id="selectType" class="width-mini noMargin input-height-small">
+                    <option>身份证</option>
+                </select>
+
+                    号码：<input type="text" class="text-small text-input-height-small noMargin" value="">
+                </td>
+
+            </tr>
+        </table>
+
+        <br />
+
+        <a href="javascript:void(0);" id="aNewCard"><i class="icon-plus" id="iNewCard"></i>添加信用卡</a>
+
+        <div class="row-fluid hide" id="divNewCard">
+            <div class="span3">
+                银行：<input type="text" class="text-mini text-input-height-small noMargin">
+            </div>
+            <div class="span4">
+                卡号：<input type="text" class="text-small text-input-height-small noMargin">
+            </div>
+            <div class="span3">
+                姓名：<input type="text" class="text-mini text-input-height-small noMargin">
+            </div>
+            <div class="span2">
+                <a href="" class="btn btn-info">添加</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<hr class="hrDotline" />
+<div class="margin-top">
+    <div class="alert alert-error padding-small">
+        <strong>差旅政策</strong>
+    </div>
+    <div class="divCommon padding-left-small">
+        <div class="row-fluid">
+            <div class="span2">
+                违背政策项目:
+            </div>
+            <div class="span10">
+                1.&nbsp;&nbsp;酒店星级超过3星<br />
+                2.&nbsp;&nbsp;价格高于¥300
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr class="hrDotline" />
+<div class="margin-top">
+    <div class="alert alert-info padding-small">
+        <strong>备注</strong> &nbsp;&nbsp;&nbsp;&nbsp;如果违背了政策，必须说明原因
+    </div>
+    <div class="">
+        <div class="row-fluid">
+            <div class="span12">
+                <textarea placeholder="填写备注" style="width: 98%; height: 100px;" dir="ltr"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="textAlign-center">
+    <a href="@Url.Action("finish")" class="btn btn-success">确认预定</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="javascript:alert('保存成功,可到行程管理中查询')" class="btn">保存</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="" class="btn">取消</a>
+</div>
+
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/hotel/order.js")"></script>

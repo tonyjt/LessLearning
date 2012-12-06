@@ -1,5 +1,5 @@
 ﻿jQuery(function () {
-    loadFlightNavi(2);
+    loadNavi(2);
 
     jQuery("#inputSingle").click(function () {
         jQuery("#dateArr").addClass("hide");

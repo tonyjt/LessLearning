@@ -6,26 +6,23 @@ using System.Web.Mvc;
 
 namespace Web.Controllers
 {
-    public class FlightController : Controller
+    public class HotelController : Controller
     {
         //
-        // GET: /Flight/
+        // GET: /Hotel/
 
         public ActionResult Index()
         {
             return View();
         }
-
-        public ActionResult Flight()
+        public ActionResult Hotel()
         {
             return View();
         }
-
         public ActionResult Order()
         {
             return View();
         }
-
         public ActionResult Finish()
         {
             return View();

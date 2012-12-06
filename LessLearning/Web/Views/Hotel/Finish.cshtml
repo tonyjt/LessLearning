@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Finish";
+    Layout = "~/Views/Hotel/Master.cshtml";
+}
+
+<div class="alert alert-success">
+    <h1>您的预定已提交审批！</h1>
+    <h2>稍候可以<a href="@Url.Action("index","order")">查询审批进度</a>中查询审批进度，
+        或继续<a href="@Url.Action("index","flight")">预定机票</a>
+    </h2>
+</div>
+<script type="text/javascript" src="@Url.Content("~/Scripts/hotel/finish.js")"></script>

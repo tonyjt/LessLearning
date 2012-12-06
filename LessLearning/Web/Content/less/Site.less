@@ -9,13 +9,26 @@
 @smallInputWidth:170px;
 @miniInputWidth:120px;
 
+@inputHeightSmall:27px;
+
 @paddingTop:10px;
 @paddingBottom:10px;
 @paddingSmall:5px;
-
 @marginSmall:5px;
+@margin:10px;
+@padding:10px;
+@marginlarge:15px;
+@paddinglarge:15px;
+
+@fontSize:12px;
+//font
 font{
 	font-family:Arial, sans-serif;
+}
+
+.fontSize
+{
+	font-size: @fontSize;
 }
 hr{
 	padding:0px 0px 0px 0px!important;
@@ -70,27 +83,75 @@ hr{
 .divContainerCustom{
 	width:1000px;
 }
+
 .noMarginPadding{
 	padding:0px 0px 0px 0px !important;
 	margin:0px 0px 0px 0px !important;
 }
-
+// Margin
 .noMargin{
 	margin:0px 0px 0px 0px !important;
 }
-.padding-left-small{
-	padding-left: @paddingSmall;
-}
-.padding-right-small{
-	padding-right: @paddingSmall;
-}
 
+
+.margin-left-small{
+	margin-left:@marginSmall;	
+}
 .margin-right-small{
 	margin-right:@marginSmall;	
 }
 
 .margin-top-small{
 	margin-top:@marginSmall;	
+}
+
+.margin-bottom-small{
+	margin-bottom:@marginSmall !important;	
+}
+
+.margin-top{
+	margin-top:@margin !important;
+}
+
+.margin{
+	margin:@margin @margin !important;
+}
+
+// Padding
+.padding-small
+{
+	padding-left: @paddingSmall !important;
+	padding-right: @paddingSmall !important;
+	padding-top: @paddingSmall !important;
+	padding-bottom: @paddingSmall !important;
+}
+.padding-left-small{
+	padding-left: @paddingSmall !important;
+}
+.padding-right-small{
+	padding-right: @paddingSmall !important;
+}
+
+
+
+.padding-bottom-small{
+	padding-bottom: @paddingSmall !important;
+}
+
+.padding-top-small{
+	padding-top: @paddingSmall !important;
+}
+
+.padding-top{
+	padding-top:@padding !important;
+}
+
+.padding-top-large{
+	padding-top:@paddinglarge !important;
+}
+
+.padding{
+	padding:@padding !important;
 }
 
 .text-small{
@@ -103,6 +164,14 @@ hr{
 
 .width-mini{
 	width:@miniInputWidth !important;
+}
+
+
+.input-height-small{
+	height: @inputHeightSmall !important;
+}
+.text-input-height-small{
+	height: @inputHeightSmall - 10 !important;
 }
 
 .control-group-small{
@@ -120,6 +189,45 @@ hr{
 		width:@smallInputWidth;
 	}
 }
+
+.search-tr
+{
+	td{
+		padding-top: @paddingSmall;
+	}
+}
+
+.textAlignCenter
+{
+	text-align:center;
+}
+.textAlign-center
+{
+	text-align:center;
+}
+.textAlign-right
+{
+	text-align:right;
+}
+
+.verticalalign-top
+{
+	vertical-align:top;
+}
+.hrDotline
+{
+	border:#FFF; 
+	border-bottom:1px 
+	dashed #e9e9e9; 
+	clear:both;
+}
+
+label
+{
+	font-size:@fontSize !important;
+}
+
+
 
 /*导航栏
     ----------------------------------------------------------*/
@@ -148,10 +256,4 @@ hr{
 
 /*Flight页面
     ----------------------------------------------------------*/
-.flight-search-tr
-{
-	td{
-		padding-top: @paddingSmall;
-	}
-}
 

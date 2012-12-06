@@ -167,7 +167,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\FlightController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HotelController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -265,12 +267,21 @@
     <Content Include="img\bizstrap\socials_icons.png" />
     <Content Include="img\bizstrap\testimonials_block_bg.gif" />
     <Content Include="img\bizstrap\timer.png" />
-    <Content Include="img\flight.gif" />
     <Content Include="img\bizstrap\logo.png" />
+    <Content Include="img\flight\airlines.png" />
+    <Content Include="img\flight\flight.gif" />
     <Content Include="img\glyphicons-halflings-white.png" />
     <Content Include="img\glyphicons-halflings.png" />
     <Content Include="img\airlines.png" />
+    <Content Include="img\hotel\hotel.gif" />
+    <Content Include="img\supplier\jy\logo.jpg" />
     <Content Include="Scripts\bizstrap\extension.js" />
+    <Content Include="Scripts\flight\order.js" />
+    <Content Include="Scripts\flight\finish.js" />
+    <Content Include="Scripts\hotel\finish.js" />
+    <Content Include="Scripts\hotel\hotel.js" />
+    <Content Include="Scripts\hotel\index.js" />
+    <Content Include="Scripts\hotel\order.js" />
     <Content Include="Scripts\jquery.flexslider\jquery.flexslider.js" />
     <Content Include="Scripts\jquery.isotope\jquery.isotope.js" />
     <Content Include="Scripts\jquery.isotope\jquery.isotope.min.js" />
@@ -281,7 +292,6 @@
     <Content Include="Scripts\bizstrap\custom.js" />
     <Content Include="Scripts\flight\flight.js" />
     <Content Include="Scripts\flight\index.js" />
-    <Content Include="Scripts\flight\master.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -302,6 +312,10 @@
     <Content Include="Scripts\less-1.3.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\bizstrap\revolution.custom.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\partial\orderProgressPartial.js" />
+    <Content Include="Scripts\partial\searchUserPartial.js" />
+    <Content Include="Scripts\site.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -338,7 +352,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\Partial\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\_ContentLayout.cshtml" />
@@ -346,11 +360,20 @@
     <Content Include="Views\Flight\Master.cshtml" />
     <Content Include="Views\Flight\Flight.cshtml" />
     <Content Include="Views\Member\SignIn.cshtml" />
+    <Content Include="Views\Hotel\Index.cshtml" />
+    <Content Include="Views\Hotel\Master.cshtml" />
+    <Content Include="Views\Hotel\Hotel.cshtml" />
+    <Content Include="Views\Hotel\Order.cshtml" />
+    <Content Include="Views\Flight\Order.cshtml" />
+    <Content Include="Views\Shared\Partial\_OrderProgressPartial.cshtml" />
+    <Content Include="Views\Shared\Partial\_SearchUserPartial.cshtml" />
+    <Content Include="Views\Flight\Finish.cshtml" />
+    <Content Include="Views\Hotel\Finish.cshtml" />
+    <Content Include="Views\Order\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\bizstrap\rs-plugin\" />
-    <Folder Include="img\airline\" />
     <Folder Include="Scripts\bizstrap\rs-plugin\" />
   </ItemGroup>
   <ItemGroup>
@@ -374,7 +397,7 @@
           <AutoAssignPort>False</AutoAssignPort>
           <DevelopmentServerPort>3001</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3001</IISUrl>
+          <IISUrl>http://localhost:3002</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

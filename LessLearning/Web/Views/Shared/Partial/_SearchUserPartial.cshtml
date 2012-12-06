@@ -1,0 +1,261 @@
+﻿<div class="divCommon padding-left-small">
+        <table class="table noMargin">
+            <thead>
+                <tr>
+                    <td>差旅人
+                    </td>
+                    <td>证件类型
+                    </td>
+                    <td>证件号码
+                    </td>
+                    <td>电话
+                    </td>
+                    <td class="tdNormalPassenger hide">常旅客
+                    </td>
+                    <td class="tdEmail hide">
+                        Email
+                    </td>
+                    <td></td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="padding-top-large">恒雁
+                    </td>
+                    <td>
+                        <select class="width-mini">
+                            <option>身份证</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" class="text-small" value="210123198508181337">
+                    </td>
+                    <td class="padding-top-large">13713713713
+                    </td>
+                    <td class="tdNormalPassenger hide">
+                        <select class="width-mini">
+                            <option>请选择</option>
+                        </select>
+                    </td>
+                    <td class="tdEmail hide">
+                        <input type="text" class="text-small" value="mail.mail@mail.com">
+                    </td>
+                    <td class="padding-top-large">
+                        <a href=""><i class=" icon-remove"></i></a>
+                    </td>
+                </tr>
+        </table>
+    </div>
+
+    <div class="row-fluid">
+        <div class="span12 textAlign-center">
+            <a href="javascript:void(0);" id="hrefOtherUser"><i class="icon-plus" id="iOrtherUser"></i>其他差旅人</a>
+            <a href="#divSearchUser" data-toggle="modal" id="hrefSearchUser" class="hide"><i class="icon-search"></i>查询</a>
+        </div>
+    </div>
+
+    <div id="divUser" class="divCommon row-fluid hide">
+        <div class="span12">
+            <label class="checkbox inline" style="margin-left: 10px;">
+                <input type="checkbox" />
+                张三(Kevin)
+            </label>
+
+            <label class="checkbox inline">
+                <input type="checkbox" />
+                李四(YouYou)
+            </label>
+
+            <label class="checkbox inline">
+                <input type="checkbox" />
+                王二麻子(Tony)
+            </label>
+
+            <label class="checkbox inline">
+                <input type="checkbox" />
+                陈老湿(Maphis)
+            </label>
+
+            <label class="checkbox inline">
+                <input type="checkbox" />
+                茅妹妹(KiKi)
+            </label>
+
+            <label class="checkbox inline">
+                <input type="checkbox" />
+                张三2(Kevin)
+            </label>
+            <label class="checkbox inline">
+                <input type="checkbox" />
+                张三3(Kevin)
+            </label>
+            <label class="checkbox inline">
+                <input type="checkbox" />
+                李四2(YouYou)
+            </label>
+
+            <label class="checkbox inline">
+                <input type="checkbox" />
+                王二麻子2(Tony)
+            </label>
+
+            <label class="checkbox inline">
+                <input type="checkbox" />
+                陈老湿2(Maphis)
+            </label>
+
+            <label class="checkbox inline">
+                <input type="checkbox" />
+                茅妹妹2(KiKi)
+            </label>
+        </div>
+    </div>
+<!--弹出层-->
+<div class="modal hide" id="divSearchUser">
+    <div class="modal-body">
+
+<div class="span12 noMarginPadding">
+    <span class="label label-info">差旅人查询</span>
+    <hr />
+    <form class="form-inline noMarginPadding">
+
+        <table style="width: 100%">
+            <tr class="search-tr">
+                <td>
+                    <input type="text" class="width-mini" id="inputName" placeholder="姓名:中文/英文" />
+                </td>
+                <td>
+                    <input type="text" class="width-mini" placeholder="手机号" />
+                </td>
+                <td>
+                    <input type="text" class="width-mini" placeholder="Email" />
+                </td>
+                <td>
+                    <a href="@Url.Action("hotel", "hotel")" class="btn btn-info">查&nbsp;&nbsp;询
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </form>
+    <br />
+    <table class="table">
+        <thead>
+            <tr>
+                <td></td>
+                <td>中文名
+                </td>
+                <td>英文名
+                </td>
+                <td>手机号
+                </td>
+                <td>Email
+                </td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <input type="checkbox" class="noMarginPadding" />
+                </td>
+                <td>
+                    张三
+                </td>
+                <td>
+                    Kevin
+                </td>
+                <td>
+                    12712354512
+                </td>
+                <td>
+                    Kevin@mail.com
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="noMarginPadding" />
+                </td>
+                <td>
+                    张三
+                </td>
+                <td>
+                    Kevin
+                </td>
+                <td>
+                    12712354512
+                </td>
+                <td>
+                    Kevin@mail.com
+                </td>
+            </tr><tr>
+                <td>
+                    <input type="checkbox" class="noMarginPadding" />
+                </td>
+                <td>
+                    张三
+                </td>
+                <td>
+                    Kevin
+                </td>
+                <td>
+                    12712354512
+                </td>
+                <td>
+                    Kevin@mail.com
+                </td>
+            </tr><tr>
+                <td>
+                    <input type="checkbox" class="noMarginPadding" />
+                </td>
+                <td>
+                    张三
+                </td>
+                <td>
+                    Kevin
+                </td>
+                <td>
+                    12712354512
+                </td>
+                <td>
+                    Kevin@mail.com
+                </td>
+            </tr><tr>
+                <td>
+                    <input type="checkbox" class="noMarginPadding" />
+                </td>
+                <td>
+                    张三
+                </td>
+                <td>
+                    Kevin
+                </td>
+                <td>
+                    12712354512
+                </td>
+                <td>
+                    Kevin@mail.com
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="pagination pagination-centered">
+              <ul>
+                <li class="disabled"><a href="#">«</a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">»</a></li>
+             </ul>
+            </div>
+</div>
+         </div>
+    <div class="modal-footer">
+        <a href="#" class="btn  btn-primary">确认</a>
+
+        <a href="#" class="btn" data-dismiss="modal">取消</a>
+    </div>
+</div>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/partial/searchUserPartial.js")"></script>

@@ -18,6 +18,7 @@
     <!--  revolution slider plugin : begin -->
     @*<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700,700italic" rel="stylesheet" type="text/css" />
     *@
+      @Scripts.Render("~/bundles/js")
 </head>
 <body>
     <!-- THE LINE AT THE VERY TOP OF THE PAGE -->
@@ -29,22 +30,16 @@
                 <!-- HEADER: LOGO AREA -->
                 <div class="span4 logo">
                     <a class="logo" href="index.html">
-                        <img alt="logo" title="bizstrap" src="/img/bizstrap/logo.png">
+                        <img alt="logo" title="bizstrap" src="/img/supplier/jy/logo.jpg">
                     </a>
                 </div>
-                <div class="span4 offset4">
+                <div class="span4"></div>
+                <div class="span4 logo">
                     <!-- HEADER: PHONE NUMBER -->
-                    <p class="head_phone"><a href="tel:555-555-5555">(800) 655-7800</a></p>
+                    <p class="head_phone"><a href="tel:400-021-0701">400-021-0701</a></p>
                 </div>
                 <!-- HEADER: SOCIAL ICONS -->
-                <ul class="socials unstyled">
-                    <li><a class="flickr" href="#"></a></li>
-                    <li><a class="twitter" href="#"></a></li>
-                    <li><a class="facebook" href="#"></a></li>
-                    <li><a class="youtube" href="#"></a></li>
-                    <li><a class="dribbble" href="#"></a></li>
-                    <li><a class="pinterest" href="#"></a></li>
-                </ul>
+               
             </div>
         </div>
         <!-- HEADER: PRIMARY SITE NAVIGATION -->
@@ -56,30 +51,30 @@
                         </div>
                         <div class="nav-collapse">
                             <ul class="nav nav-pills" id="navul">
-                                <li class="active single">
+                                <li class="single" style="width:180px;" id="navHome">
                                     <a href="@Url.Action("index","flight")">首页
                                     <i>差旅站点首页</i>
                                     </a>
                                 </li>
-                                <li class="dropdown">
+                                <li class="dropdown" style="width:180px;" id="navSearch">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">预定
                                         <i>预定您的行程</i>
                                     </a>
 
                                     <ul class="dropdown-menu">
                                         <li><a href="@Url.Action("index","flight")">国内机票</a></li>
-                                        <li><a href="dividers.html">酒店预订</a></li>
+                                        <li><a href="@Url.Action("index","hotel")">酒店预订</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
+                                <li class="dropdown" style="width:180px;" id="navOrder">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#menu2">行程管理<i>行程的查询与变更</i>
                                     </a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="3_columns_about.html">行程查询</a></li>
+                                        <li><a href="@Url.Action("index","order")">行程查询</a></li>
                                         <li><a href="left_column_about.html">行程变更</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
+                                <li class="dropdown" style="width:180px;" id="navApprove">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#menu3">审批管理<i>审批单查询与管理</i>
                                     </a>
                                     <ul class="dropdown-menu">
@@ -87,7 +82,7 @@
                                         <li><a href="portfolio_grid.html">待审批列表</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown">
+                               @* <li class="dropdown">
                                     <a class="dropdown-toggle" data-toggle="dropdown" href="#menu4">数据服务<i>数据的查询与导出</i>
                                     </a>
 
@@ -101,8 +96,8 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="">协议酒店维护</a></li>
                                     </ul>
-                                </li>
-                                <li class="dropdown"><a href="contact_us.html">辅助工具
+                                </li>*@
+                                <li class="dropdown" style="width:180px;" id="navTool"><a href="contact_us.html">辅助工具
                                             <i>帮助您的出行</i>
                                     </a>
                                     <ul class="dropdown-menu">
@@ -127,6 +122,7 @@
             @RenderBody()
         </div>
     </div>
+    
     <!-- FOOTER STARTS HERE -->
     <footer id="footer" class="footer">
         <div class="container divContainerCustom">
@@ -154,6 +150,6 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/less")
     @Scripts.Render("~/bundles/bizstrap")
-
+  
 </body>
 </html>

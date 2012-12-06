@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Master";
+    Layout = "~/Views/Shared/_ContentLayout.cshtml";
+}
+
+<div class="container-fluid containerDiv">
+    <div class="row-fulid">
+        <div class="span3">
+            <h2>
+                <i class="icon-tags"></i>行程查询
+            </h2>
+        </div>
+        <div class="offset6 span3">
+
+        </div>
+    </div>
+    <div class="span12 noMarginPadding" style="min-height:15px !important;">
+        <hr />
+    </div>
+    
+    <div class="span12 noMarginPadding">
+        @RenderBody()
+    </div>
+</div>
+
+<script type="text/javascript">
+    loadMainNav("Order");
+</script>

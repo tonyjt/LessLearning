@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Hotel/Master.cshtml";
+}
+<br />
+   <form class="form-horizontal">
+            <div class="container-fluid containerDiv">
+                <div class="span6">
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="codeDep">酒店类型</label>
+                        <div class="controls">
+                            <select id="selectType">
+                                <option>非协议酒店</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="control-group control-group-small" id="divDateDep">
+                        <label class="control-label" for="dateBegin">入住日期</label>
+                        <div class="controls">
+                            <input type="text" id="dateBegin" placeholder="入住日期" />
+                        </div>
+                    </div>
+                    <br />
+                    高级查询
+                    
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="name">酒店</label>
+                        <div class="controls">
+                            <input type="text" id="name" placeholder="酒店名称" class="small" />
+                        </div>
+                    </div>
+
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="level">星级</label>
+                        <div class="controls">
+                            <select id="level">
+                                    <option>--任意--</option>
+                                </select>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="span6">
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="dateDep">目的城市</label>
+                        <div class="controls">
+                            <input type="text" id="" placeholder="目的城市" class="small" />
+                        </div>
+                    </div>
+                    <div class="control-group control-group-small" id="divDateArr">
+                        <label class="control-label" for="dateEnd">离开日期</label>
+                        <div class="controls">
+                            <input type="text" id="dateEnd" placeholder="离开日期" />
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="location">位置</label>
+                        <div class="controls">
+                            <input type="text" id="location" placeholder="酒店位置" class="small" />
+                        </div>
+                    </div>
+
+
+                    <div class="control-group control-group-small">
+                        <label class="control-label" for="price">房价范围</label>
+                        <div class="controls">
+                            <select id="price">
+                                    <option>不限</option>
+                                </select>
+                        </div>
+                    </div>
+
+                    <br />
+                    <a href="@Url.Action("hotel","hotel")" class="btn btn-info">
+                        &nbsp;&nbsp;&nbsp;&nbsp;查&nbsp;&nbsp;询&nbsp;&nbsp;&nbsp;&nbsp;
+                    </a>
+                </div>
+            </div>
+
+        </form>
+<script type="text/javascript" src="@Url.Content("~/Scripts/hotel/index.js")"></script>
