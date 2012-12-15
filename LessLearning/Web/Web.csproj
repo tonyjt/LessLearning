@@ -251,6 +251,7 @@
       <Compile>True</Compile>
       <Minify>True</Minify>
     </Content>
+    <None Include="Properties\PublishProfiles\Preview.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="img\bizstrap\arrow_large_left.png" />
     <Content Include="img\bizstrap\arrow_large_right.png" />
